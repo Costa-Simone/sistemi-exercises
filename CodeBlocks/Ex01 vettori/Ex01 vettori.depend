@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1638533040 source:d:\3° superiore\sistemi e reti\codeblocks\ex01 vettori\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+

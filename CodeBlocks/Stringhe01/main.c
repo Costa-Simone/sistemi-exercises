@@ -10,7 +10,10 @@ void menu(int *sc);
 void sostituisciPunto(char frase[]);
 int palindroma(char str[]);
 int anagramma(char str[], char str2[]);
-void azzeraVet(char str[], int len);
+void azzeraVet(int str[], int len);
+int miaLen(char str[]);
+void miaUpper(char str[]);
+void miaLower(char str[]);
 
 void clrcls() {
     system("@cls||clear"); //direttiva che ci consente richiamare un prog da prompt(clear pulisce in windows, cls linux)
@@ -55,10 +58,10 @@ int main()
                 gets(s2);
 
                 if(anagramma(s, s2) == TRUE) {
-                    printf("%s e' l'anagramma di %s", s, s2);
+                    printf("\n%s e' l'anagramma di %s\n", s, s2);
                 }
                 else {
-                    printf("%s non e' l'anagramma di %s", s, s2);
+                    printf("\n%s non e' l'anagramma di %s\n", s, s2);
                 }
 
                 break;
@@ -81,7 +84,39 @@ int main()
 
     return 0;
 }
-void azzeraVet(char str[], int len) {
+int miaLen(char str[]) {
+    int i = 1;
+
+    while(str[i] != '\0' && i < MAX) {
+        i++;
+    }
+
+    return i;
+}
+void miaUpper(char str[]) {
+    int i = 0, c = str[i];
+
+    while(i < miaLen(str)) {
+        if(c >= 97 && c <= 122) {
+            str[i] -= 32;
+        }
+
+        i++;
+    }
+}
+void miaLower(char str[]) {
+    int i = 0;
+
+    while(i < miaLen(str)) {
+        int c = str[i];
+        if(c >= 65 && c <= 90) {
+            str[i] += 32;
+        }
+
+        i++;
+    }
+}
+void azzeraVet(int str[], int len) {
     for(int i = 0; i < len; i++) {
         str[i] = 0;
     }
@@ -113,7 +148,7 @@ void sostituisciPunto(char frase[]) {
     // printf("La frase inserita e': %s\n", frase);
     puts(frase);
 
-    len_stringa = strlen(frase); //passata stringa e restituisce lunghezza senza tappo
+    len_stringa = miaLen(frase); //passata stringa e restituisce lunghezza senza tappo
     printf("La frase contiene %d caratteri (inclusi gli spazi)\n", len_stringa);
 
     for(i = 0; i < len_stringa; i++) {
@@ -132,13 +167,11 @@ void sostituisciPunto(char frase[]) {
 int palindroma(char str[]) {
     int len, ris, i, j; //lunghezza stringa
 
-    len = strlen(str);
+    len = miaLen(str);
 
     printf("\nLa parola contiene %d caratteti", len);
 
-    for(int i = 0; i < len; i++) {
-        str[i] = tolower(str[i]); //rende caratteri tutti minuscoli
-    }
+    miaLower(str);
 
     printf("\nLa parola inserita: ");
     puts(str);
@@ -161,19 +194,34 @@ int palindroma(char str[]) {
     return ris;
 }
 int anagramma(char str[], char str2[]) {
-    int len, len2, aus, num1[26], num2[26];
+    int len, len2, aus = TRUE, num1[26], num2[26];
 
-    len = strlen(str);
-    len2 = strlen(str2);
+    len = miaLen(str);
+    len2 = miaLen(str2);
 
-    azzeraVet(str, len);
-    azzeraVet(str2, len2);
+    azzeraVet(num1, len);
+    azzeraVet(num2, len2);
+
+    miaUpper(str);
+    miaUpper(str2);
 
     if(len == len2) {
         int i = 0;
 
         while(str[i] != '\0') {
+            num1[str[i] - 65]++;
+            num2[str2[i] - 65]++;
+            i++;
+        }
 
+        i = 0;
+
+        while(i < 26 && aus == TRUE) {
+            if(num1[i] != num2[i]) {
+                aus = FALSE;
+            }
+
+            i++;
         }
     }
     else {

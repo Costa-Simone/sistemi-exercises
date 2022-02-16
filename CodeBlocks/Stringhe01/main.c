@@ -18,6 +18,7 @@ void contaVocaliConsonanti(char str[]);
 void invertiStringa(char str[]);
 int miaConcat(char str[], char str2[]);
 int compareString(char str[], char str2[]);
+int controllaValoriNumerici(char str[]);
 
 void clrcls() {
     system("@cls||clear"); //direttiva che ci permette di richiamare un prog dal prompt(clear pulisce in windows, cls linux)
@@ -118,6 +119,19 @@ int main()
 
                 break;
 
+            case 8:
+                printf("\nInserisci stringa: ");
+                gets(s);
+
+                if(controllaValoriNumerici(s) == FALSE) {
+                    printf("\nI valori numerici sono presenti solo nelle celle pari");
+                }
+                else {
+                    printf("\nI valori numerici non sono presenti solo nelle celle pari");
+                }
+
+                break;
+
             case 0: /*Esci*/
                 break;
 
@@ -175,6 +189,7 @@ void menu(int *sc) {
     printf("5. Inverti stringa\n");
     printf("6. Concatena due stringhe\n");
     printf("7. Compara stringhe\n");
+    printf("8. Controlla numeri solo in caselle pari\n");
 
     printf("\nScelta --> ");
     scanf("%d", sc);
@@ -343,4 +358,22 @@ int compareString(char str[], char str2[]){
     }
 
     return flag;
+}
+int controllaValoriNumerici(char str[]) {
+    int esci = FALSE, i = 0;
+
+    miaLower(str);
+
+    while(!esci && str[i] != '/0') {
+        if(i % 2 == 1 && (str[i] >= 48 || str[i] <= 57)) {
+            esci = TRUE;
+        }
+        else if(i % 2 == 0 && (str[i] >= 97 || str[i] <= 122)) {
+            esci = TRUE;
+        }
+
+        i++;
+    }
+
+    return esci;
 }

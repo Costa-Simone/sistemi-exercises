@@ -19,6 +19,7 @@ void invertiStringa(char str[]);
 int miaConcat(char str[], char str2[]);
 int compareString(char str[], char str2[]);
 int controllaValoriNumerici(char str[]);
+void stringheAlternate(char str[], char str2[]);
 
 void clrcls() {
     system("@cls||clear"); //direttiva che ci permette di richiamare un prog dal prompt(clear pulisce in windows, cls linux)
@@ -119,7 +120,7 @@ int main()
 
                 break;
 
-            case 8:
+            case 8: // Controlla numeri solo in caselle pari
                 printf("\nInserisci stringa: ");
                 gets(s);
 
@@ -129,6 +130,16 @@ int main()
                 else {
                     printf("\nI valori numerici non sono presenti solo nelle celle pari");
                 }
+
+                break;
+
+            case 9: //carica in stringa 2 stringhe alternate
+                printf("\nInserisci prima parola: ");
+                gets(s);
+                printf("\nInserisci seconda parola: ");
+                gets(s2);
+
+                stringheAlternate(s, s2);
 
                 break;
 
@@ -190,6 +201,7 @@ void menu(int *sc) {
     printf("6. Concatena due stringhe\n");
     printf("7. Compara stringhe\n");
     printf("8. Controlla numeri solo in caselle pari\n");
+    printf("9. carica in stringa 2 stringhe alternate\n");
 
     printf("\nScelta --> ");
     scanf("%d", sc);
@@ -360,20 +372,47 @@ int compareString(char str[], char str2[]){
     return flag;
 }
 int controllaValoriNumerici(char str[]) {
-    int esci = FALSE, i = 0;
+    int esci = FALSE, i = 0, len;
 
     miaLower(str);
+    len = miaLen(str);
 
-    while(!esci && str[i] != '/0') {
-        if(i % 2 == 1 && (str[i] >= 48 || str[i] <= 57)) {
+    while(!esci && i < len) {
+        if(i % 2 == 1 && str[i] >= 48 && str[i] <= 57) {
             esci = TRUE;
         }
-        else if(i % 2 == 0 && (str[i] >= 97 || str[i] <= 122)) {
+        else if(i % 2 == 0 && str[i] >= 97 && str[i] <= 122) {
             esci = TRUE;
         }
 
         i++;
+        printf("%d", esci);
     }
 
     return esci;
+}
+void stringheAlternate(char str[], char str2[]) {
+    char s3[MAX];
+    int len = miaLen(str), len2 = miaLen(str2), cont, j = 0;
+
+    if(len >= len2) {
+        cont = len;
+        min = len2;
+    }
+    else {
+        cont = len2;
+        min = len;
+    }
+
+    for(int i = 0; i <= cont * 2+1; i += 2) {
+        if(j > min)
+        s3[i] = str[j];
+        s3[i + 1] = str2[j];
+        j++;
+    }
+
+    s3[len + len2] = '\0';
+
+    printf("\nLa stringa alternata e':");
+    puts(s3);
 }

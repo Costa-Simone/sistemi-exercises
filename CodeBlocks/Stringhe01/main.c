@@ -393,26 +393,22 @@ int controllaValoriNumerici(char str[]) {
 }
 void stringheAlternate(char str[], char str2[]) {
     char s3[MAX];
-    int len = miaLen(str), len2 = miaLen(str2), cont, j = 0;
+    int len = miaLen(str), len2 = miaLen(str2), cont, i = 0, j = 0, k = 0, esci = FALSE;
 
-    if(len >= len2) {
-        cont = len;
-        min = len2;
-    }
-    else {
-        cont = len2;
-        min = len;
-    }
-
-    for(int i = 0; i <= cont * 2+1; i += 2) {
-        if(j > min)
-        s3[i] = str[j];
-        s3[i + 1] = str2[j];
-        j++;
+    while(esci == FALSE) {
+        if(str[i] != '\0') {
+            s3[k++] = str[i++];
+        }
+        if(str2[j] != '\0') {
+            s3[k++] = str2[j++];
+        }
+        if(str[i] == '\0' && str2[j] == '\0') {
+            esci = TRUE;
+        }
     }
 
-    s3[len + len2] = '\0';
+    s3[k] = '\0';
 
-    printf("\nLa stringa alternata e':");
+    printf("\nLa stringa alternata e' %d:", k);
     puts(s3);
 }

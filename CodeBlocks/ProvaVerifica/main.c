@@ -83,11 +83,11 @@ int main()
                 printf("\nInserisci la seconda stringa: ");
                 gets(s2);
 
-                if(ex05(s, s2) == 0) {
-                    printf("\nLa prima stringa e' contenuta");
+                if(ex05(s, s2) == 1) {
+                    printf("\nLa seconda stringa e' contenuta");
                 }
                 else {
-                    printf("\nLa prima stringa non e' contenuta");
+                    printf("\nLa seconda stringa non e' contenuta");
                 }
 
 
@@ -112,23 +112,28 @@ int main()
     return 0;
 }
 int ex05(char str[], char str2[]) {
-    int esci = 0, i = 0;
+    int i = 0, j = 0, trovato = 0;
 
-    while(esci == 0 && str2[i] != '\0') {
-        int j = 0;
+    while(trovato == 0 && str[i] != '\0') {
+        int esci = 1;
 
-        while(esci == 0 && str[j] != '\0') {
-            if(str2[i] != str[j]) {
-                esci = 1;
+        while(esci == 1 && str2[j] != '\0') {
+            if(str[i + j] != str2[j]) {
+                esci = 0;
             }
 
             j++;
         }
 
-        i++;
+        if(esci == 1) {
+            trovato = 1;
+        }
+
+        i += j;
+        j = 0;
     }
 
-    return esci;
+    return trovato;
 }
 void ex04(char str[], char str2[]) {
     char s3[MAX];

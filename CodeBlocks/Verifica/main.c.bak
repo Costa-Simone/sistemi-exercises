@@ -131,13 +131,13 @@ void ex03(char str[]) {
     printf("\nIl carattere apparso piu' volte e' %c con %d frequenze\n", charMax, freqMax);
 }
 void ex02(char str[], int num) {
-    int i = 1;
+    int i = 0;
 
     while(str[i] != '\0') {
-        if(i % 2 == 0 && (str[i] + num) < 256 {
+        if(i % 2 == 0 && i != 0) {
             str[i] += num;
         }
-        else if(i % 2 == 1 && (str[i] > num)) {
+        else if(i % 2 == 1) {
             str[i] -= num;
         }
 

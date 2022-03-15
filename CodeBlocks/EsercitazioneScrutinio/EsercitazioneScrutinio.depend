@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1647333435 source:c:\users\windows\documents\github\sistemi-exercises\codeblocks\esercitazionescrutinio\main.c
+	"scrutinio.h"
+
+1647333430 c:\users\windows\documents\github\sistemi-exercises\codeblocks\esercitazionescrutinio\scrutinio.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

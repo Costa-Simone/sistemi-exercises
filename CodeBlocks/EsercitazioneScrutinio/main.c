@@ -5,7 +5,7 @@ int menu();
 int main()
 {
     int scelta, totStudenti = 0;
-    char studenti[MAX_STUDENTI] [LEN_STUDENTE];
+    char studenti[MAX_STUDENTI][LEN_STUDENTE];
     float valutazioni [MAX_STUDENTI] [TOT_MATERIE];
 
     do {
@@ -40,6 +40,10 @@ int main()
 
             break;
 
+        case 5: //Ordina studente
+            ordinaStudenti(studenti, valutazioni, totStudenti);
+            break;
+
         case 0: //Esci
             break;
 
@@ -64,6 +68,7 @@ int menu() {
     printf("2. Stampa Elenco Studenti\n");
     printf("3. Calcola e Visualizza scrutinio\n");
     printf("4. Genere nuove valutazioni\n");
+    printf("5. Ordina studenti\n");
     printf("0. Esci\n");
 
     printf("\nSCELTA --> ");

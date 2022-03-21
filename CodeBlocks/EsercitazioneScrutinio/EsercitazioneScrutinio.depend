@@ -7,3 +7,12 @@
 	<stdlib.h>
 	<string.h>
 
+1647880749 source:c:\users\valbo\onedrive\documenti\github\sistemi-exercises\codeblocks\esercitazionescrutinio\main.c
+	"scrutinio.h"
+
+1647884435 c:\users\valbo\onedrive\documenti\github\sistemi-exercises\codeblocks\esercitazionescrutinio\scrutinio.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+

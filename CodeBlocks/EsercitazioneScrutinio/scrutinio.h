@@ -17,62 +17,86 @@ float float_rand(float min, float max){
     val = rand() / (float) RAND_MAX;  // [0, 1.0]
     return min + (val * (max - min));
 }
-int nuovoStudente(char studenti[MAX_STUDENTI][LEN_STUDENTE], float valutazioni[MAX_STUDENTI][TOT_MATERIE], int pos) {
-    int i, caricato = FALSE;
+int nuovoStudente(char studenti[MAX_STUDENTI][LEN_STUDENTE], float valutazioni[MAX_STUDENTI][TOT_MATERIE],
+                  int pos, float medie[MAX_STUDENTI], char esito[MAX_STUDENTI]) {
+    int i, caricato = FALSE, contIn = 0;
     float v;
 
+    medie[pos] = 0;
+
     if(pos < MAX_STUDENTI){
-        printf("Inserisci nome: ");
+        printf("\nInserisci nome: ");
         gets(studenti[pos]);
 
         for(i=0; i<TOT_MATERIE; i++){
             v = float_rand(2, 10);
             valutazioni[pos][i] = v;
+            medie[pos] += v;
+
+            if(v < 6) {
+                contIn++;
+            }
         }
+
+        if(contIn > 3) {
+            esito[pos] = 'N';
+        }
+        else if(contIn >= 1 || contIn <= 3) {
+            esito[pos] = 'R';
+        }
+        else {
+            esito[pos] = 'A';
+        }
+
+        medie[pos] /= TOT_MATERIE;
         caricato = TRUE;
     }
 
     return caricato;
 }
-void stampaValutazioni(char studenti[MAX_STUDENTI][LEN_STUDENTE], float valutazioni[MAX_STUDENTI][TOT_MATERIE], int pos) {
+void stampaValutazioni(char studenti[MAX_STUDENTI][LEN_STUDENTE], float valutazioni[MAX_STUDENTI][TOT_MATERIE],
+                       int pos, float medie[MAX_STUDENTI], char esito[MAX_STUDENTI]) {
     int i;
-    printf("INFO\tTPSIT\tSIS\tITA\tMAT\tALUNNO/A\n");
+    printf("\nINFO\tTPSIT\tSIS\tITA\tMAT\tMEDIA\tESITO\tALUNNO/A\n");
     for(i=0; i<pos; i++){
-        printf("%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t%s\n",
+        printf("%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t%c\t%s\t\n",
                valutazioni[i][0], valutazioni[i][1], valutazioni[i][2],
-               valutazioni[i][3], valutazioni[i][4], studenti[i]);
+               valutazioni[i][3], valutazioni[i][4], medie[i], esito[i], studenti[i]);
     }
 }
-void ordinaStudenti(char studenti[MAX_STUDENTI][LEN_STUDENTE], float valutazioni[MAX_STUDENTI][TOT_MATERIE], int pos) {
+void ordinaStudenti(char studenti[MAX_STUDENTI][LEN_STUDENTE], float valutazioni[MAX_STUDENTI][TOT_MATERIE],
+                    int pos, float medie[MAX_STUDENTI], char esito[MAX_STUDENTI]) {
     int posMin;
     float aus;
-    char ausStr[LEN_STUDENTE];
+    char ausStr[LEN_STUDENTE], ausC;
 
     for(int i = 0; i <= pos - 2; i++) {
         posMin = i;
 
         for(int j = i + 1; j <= pos - 1; j++) {
-            int k = 0, esci = FALSE;
+            if(strcmp(studenti[posMin], studenti[j]) > 0) {
+                posMin = j;
+            }
+        }
 
-            while(esci == FALSE && studenti[posMin][k] != '\0' && studenti[j][k] != '\0') {
-                if(studenti[posMin][k] > studenti[j][k]) {
-                    posMin = j;
-                    esci = TRUE;
-                }
-                k++;
+        if(posMin != i) {
+            strcpy(ausStr, studenti[i]);
+            strcpy(studenti[i], studenti[posMin]);
+            strcpy(studenti[posMin], ausStr);
+
+            for(int n = 0; n < TOT_MATERIE; n++) {
+                aus = valutazioni[i][n];
+                valutazioni[i][n] = valutazioni[posMin][n];
+                valutazioni[posMin][n] = aus;
             }
 
-            if(posMin != i) {
-                strcpy(ausStr, studenti[i]);
-                strcpy(studenti[i], studenti[posMin]);
-                strcpy(studenti[posMin], ausStr);
+            aus = medie[i];
+            medie[i] = medie[posMin];
+            medie[posMin] = aus;
 
-                for(int k = 0; k < TOT_MATERIE; k++) {
-                    aus = valutazioni[i][k];
-                    valutazioni[i][k] = valutazioni[posMin][k];
-                    valutazioni[posMin][k] = aus;
-                }
-            }
+            ausC = esito[i];
+            esito[i] = esito[posMin];
+            esito[posMin] = ausC;
         }
     }
 }

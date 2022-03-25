@@ -100,5 +100,34 @@ void ordinaStudenti(char studenti[MAX_STUDENTI][LEN_STUDENTE], float valutazioni
         }
     }
 }
+void scrutinio (char studenti[MAX_STUDENTI][LEN_STUDENTE], float valutazioni[MAX_STUDENTI][TOT_MATERIE],
+                    int pos, char esito[MAX_STUDENTI]) {
+    for(int i = 0; i < pos; i++) {
+        printf("%s\t%c\t", studenti[i], esito[i]);
 
+        for(int j = 0; j < TOT_MATERIE; j++) {
+            if(valutazioni[i][j] < 6) {
+                switch(j) {
+                case 0:
+                    printf("INFO ");
+                    break;
+                case 1:
+                    printf("TPSIT ");
+                    break;
+                case 2:
+                    printf("SIS ");
+                    break;
+                case 3:
+                    printf("ITA ");
+                    break;
+                case 4:
+                    printf("MAT ");
+                    break;
+                }
+            }
+        }
+
+        printf("\n");
+    }
+}
 #endif // SCRUTINIO_H_INCLUDED

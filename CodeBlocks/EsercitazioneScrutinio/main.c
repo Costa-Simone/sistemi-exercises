@@ -33,7 +33,7 @@ int main()
             break;
 
         case 3: //Calcola e Visualizza scrutinio
-
+            scrutinio(studenti, valutazioni, totStudenti, esito);
             break;
 
         case 4: //Genere nuove valutazioni

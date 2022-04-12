@@ -37,12 +37,22 @@ int main()
             break;
 
         case 4: //Genere nuove valutazioni
-
+            nuoveValutazioni(valutazioni, medie, esito, totStudenti);
+            printf("\nNuove valutazioni caricate!");
             break;
 
         case 5: //Ordina studente
             ordinaStudenti(studenti, valutazioni, totStudenti, medie, esito);
             stampaValutazioni(studenti, valutazioni, totStudenti, medie, esito);
+            break;
+
+        case 6: //Stampa dati su FILE
+            stampaScrutinio("scrutinio.txt", studenti, valutazioni, totStudenti, medie, esito);
+            printf("\nStampa terminata!");
+            break;
+
+        case 7:
+            leggiFile("studenti.txt");
             break;
 
         case 0: //Esci
@@ -51,6 +61,8 @@ int main()
         default:
             break;
         }
+
+
 
         fflush(stdin);
         getchar();
@@ -70,6 +82,8 @@ int menu() {
     printf("3. Calcola e Visualizza scrutinio\n");
     printf("4. Genere nuove valutazioni\n");
     printf("5. Ordina studenti\n");
+    printf("6. Stampa su FILE\n");
+    printf("7. Leggi da FILE\n");
     printf("0. Esci\n");
 
     printf("\nSCELTA --> ");

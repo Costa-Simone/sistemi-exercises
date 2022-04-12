@@ -130,4 +130,76 @@ void scrutinio (char studenti[MAX_STUDENTI][LEN_STUDENTE], float valutazioni[MAX
         printf("\n");
     }
 }
+void nuoveValutazioni(float valutazioni[MAX_STUDENTI][TOT_MATERIE], float medie[MAX_STUDENTI], char esito[MAX_STUDENTI], int totStudenti) {
+    int nInsuff, somma;
+    float v;
+
+    for(int i = 0; i < totStudenti; i++) {
+        somma = 0;
+        nInsuff = 0;
+
+        for(int j = 0; j < TOT_MATERIE; j++){
+            v = float_rand(2, 10);
+            valutazioni[i][j] = v;
+            somma += v;
+
+            if(v < 6) {
+                nInsuff++;
+            }
+        }
+
+        if(nInsuff > 3) {
+            esito[i] = 'N';
+        }
+        else if(nInsuff >= 1 || nInsuff <= 3) {
+            esito[i] = 'R';
+        }
+        else {
+            esito[i] = 'A';
+        }
+
+        medie[i] = (somma / totStudenti);
+    }
+}
+void stampaScrutinio(char file_name[], char studenti[MAX_STUDENTI][LEN_STUDENTE], float valutazioni[MAX_STUDENTI][TOT_MATERIE],
+                       int totStud, float medie[MAX_STUDENTI], char esito[MAX_STUDENTI]) {
+    FILE* fp;
+    // "r" => read => lettura
+    // "w" => write => scrittua
+    // "a" => append => scrittura (senza sovr. dati precedenti)
+    // "rb", "wb", "ab", ...
+    fp = fopen(file_name, "w");
+
+    if(fp != NULL) {
+        for(int i = 0; i < totStud; i++){
+            fprintf(fp, "%s;%.2f;%.2f;%.2f;%.2f;%.2f;%.2f;%c;\n",
+               studenti[i], valutazioni[i][0], valutazioni[i][1], valutazioni[i][2],
+               valutazioni[i][3], valutazioni[i][4], medie[i], esito[i]);
+        }
+    }
+    else {
+        printf("\nImpossibile aprire il file");
+    }
+
+    fclose(fp);
+}
+void leggiFile(char file_name[]) { //deve essere funzione
+    FILE* fp;
+    char cogn[LEN_STUDENTE];
+
+    fp = fopen(file_name, "r");
+
+    if(fp != NULL) {
+        while(!feof(fp)) {
+            fscanf(fp, "%s", cogn);
+            printf("%s\n", cogn);
+        }
+    }
+    else {
+        printf("\nImpossibile aprire il file");
+    }
+
+    fclose(fp);
+}
+
 #endif // SCRUTINIO_H_INCLUDED

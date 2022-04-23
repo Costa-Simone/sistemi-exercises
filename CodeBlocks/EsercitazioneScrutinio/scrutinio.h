@@ -11,6 +11,8 @@
 #define TRUE 1
 #define FALSE 0
 
+void creaValutazioniStudenteFile(float valutazioni[MAX_STUDENTI][TOT_MATERIE], int pos, float medie[MAX_STUDENTI], char esito[MAX_STUDENTI]);
+
 float float_rand(float min, float max){
     float val;
     //srand(time(NULL));
@@ -183,23 +185,59 @@ void stampaScrutinio(char file_name[], char studenti[MAX_STUDENTI][LEN_STUDENTE]
 
     fclose(fp);
 }
-void leggiFile(char file_name[]) { //deve essere funzione
+int leggiFile(char file_name[], char studenti[MAX_STUDENTI][LEN_STUDENTE], float valutazioni[MAX_STUDENTI][TOT_MATERIE],
+                       int pos, float medie[MAX_STUDENTI], char esito[MAX_STUDENTI]) { //deve essere funzione
     FILE* fp;
     char cogn[LEN_STUDENTE];
 
     fp = fopen(file_name, "r");
 
-    if(fp != NULL) {
+    if(fp != NULL){
         while(!feof(fp)) {
             fscanf(fp, "%s", cogn);
-            printf("%s\n", cogn);
+            //printf("%s\n", cogn);
+            //cogn => studenti[i];
+            strcpy(studenti[pos], cogn);
+            creaValutazioniStudenteFile(valutazioni, pos, medie, esito);
+            pos++;
         }
     }
-    else {
-        printf("\nImpossibile aprire il file");
-    }
+    else
+        printf("Impossibile aprire il file\n");
 
     fclose(fp);
+
+    return pos;
+}
+void creaValutazioniStudenteFile(float valutazioni[MAX_STUDENTI][TOT_MATERIE], int pos, float medie[MAX_STUDENTI], char esito[MAX_STUDENTI]) {
+    int i, contIn = 0;
+    float v;
+
+    medie[pos] = 0;
+
+    if(pos < MAX_STUDENTI){
+        for(i=0; i<TOT_MATERIE; i++){
+            v = float_rand(2, 10);
+            valutazioni[pos][i] = v;
+            medie[pos] += v;
+
+            if(v < 6) {
+                contIn++;
+            }
+        }
+
+        if(contIn > 3) {
+            esito[pos] = 'N';
+        }
+        else if(contIn >= 1 || contIn <= 3) {
+            esito[pos] = 'R';
+        }
+        else {
+            esito[pos] = 'A';
+        }
+
+        medie[pos] /= TOT_MATERIE;
+    }
 }
 
 #endif // SCRUTINIO_H_INCLUDED

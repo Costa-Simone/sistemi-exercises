@@ -52,7 +52,8 @@ int main()
             break;
 
         case 7:
-            leggiFile("studenti.txt");
+            totStudenti = leggiFile("studenti.txt", studenti, valutazioni, totStudenti, medie, esito);
+            printf("\nCaricamento terminato!");
             break;
 
         case 0: //Esci

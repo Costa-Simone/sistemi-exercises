@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1650957274 source:d:\sistemi e reti\formula1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"piloti.h"
+	"scuderie.h"
+	"granpremi.h"
+
+1650957486 d:\sistemi e reti\formula1\piloti.h
+
+1650956300 d:\sistemi e reti\formula1\scuderie.h
+
+1650956036 d:\sistemi e reti\formula1\granpremi.h
+

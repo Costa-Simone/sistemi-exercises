@@ -63,8 +63,6 @@ int main()
             break;
         }
 
-
-
         fflush(stdin);
         getchar();
         system("@cls||clear");

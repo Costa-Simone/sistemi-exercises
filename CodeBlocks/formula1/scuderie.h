@@ -14,98 +14,52 @@ typedef struct scuderia{
     int totPunti;
 } Scuderie;
 
- int caricaScuderieDaFile(char file_name[], Scuderie s[]){
+int caricaScuderieDaFile(char file_name[], Scuderie s[]){
     FILE* fp;
-    char row_file[BUFFER];
+    char row_file[BUFFER], spl[BUFFER];
     int cnt = 0;
     int i = 0; // Variabile per lo split
     int j = 0;
     char dato[LEN_NOME]; // Array char per lo split
 
     fp = fopen(file_name, "r");
-    if (fp != NULL)
-    {
-        while(!feof(fp))
-        {
+
+    if (fp != NULL) {
+        while(!feof(fp)) {
             //fscanf(fp, "%s", row_file);
             fgets(row_file, BUFFER, fp);
-
+            printf("%s\n", row_file);
             /* row_file => 1;Mercedes AMG Petronas;W13;96.5;0 */
-
-            //ID SCUDERIA
-            i = 0;
-            while(row_file[i] != ';')
-            {
-                dato[i] = row_file[i];
-                i++;
-            }
-            j = i + 1;
-            dato[i] = '\0';
-            s[cnt].idScuderia = atoi(dato);   //Converte da CHAR a INT
-            printf("%d  ", s[cnt].idScuderia);
-
-            //NOME
-            azzeraDatoScuderia(dato);
-            i = 0;
-            while(row_file[j] != ';')
-            {
-                dato[i++] = row_file[j++];
-            }
-            dato[i] = '\0';
-            strcpy(s[cnt].nome, dato);
-            printf("%s  ", s[cnt].nome);
-
-            //MONOPOSTO
-            azzeraDatoScuderia(dato);
-            j++;
-            i = 0;
-            while(row_file[j] != ';')
-            {
-                dato[i++] = row_file[j++];
-            }
-            dato[i] = '\0';
-            strcpy(s[cnt].monoposto, dato);
-            printf("%s  ", s[cnt].monoposto);
-
-            //RATING
-            azzeraDatoScuderia(dato);
-            j++;
-            i = 0;
-            while(row_file[j] != ';')
-            {
-                dato[i++] = row_file[j++];
-            }
-            dato[i] = '\0';
-            s[cnt].rating = atof(dato);
-            printf("%.1f  ", s[cnt].rating);
-
-            //TOTALE PUNTI
-            azzeraDatoScuderia(dato);
-            j++;
-            i = 0;
-            while(row_file[j] != '\0')
-            {
-                dato[i++] = row_file[j++];
-            }
-            s[cnt].totPunti = atoi(dato);
-            printf("%d\n", s[cnt].totPunti);
+            // idScuderia
+            strcpy(spl, splittaString(row_file, 0, ';'));
+            s[cnt].idScuderia = atoi(spl);
+            // nome
+            strcpy(spl, splittaString(row_file, 1, ';'));
+            strcpy(s[cnt].nome, spl);
+            // monoposto
+            strcpy(spl, splittaString(row_file, 2, ';'));
+            strcpy(s[cnt].monoposto, spl);
+            //rating
+            strcpy(spl, splittaString(row_file, 3, ';'));
+            s[cnt].rating = atoi(spl);
+            // totPunti
+            strcpy(spl, splittaString(row_file, 4, ';'));
+            s[cnt].totPunti = atof(spl);
 
             cnt++;
         }
     }
-    else
-        printf("Impossibile aprire il file...\n");
+    else printf("Impossibile aprire il file...\n");
 
     fclose(fp);
+
     return cnt;
  }
+void elencoScuderie(Scuderie s[], int len) {
+    printf("STAMPA ELENCO SCUDERIE\n");
+    printf("ID\tRATING\tTOTPUNTI\tMONOPOSTO\tNOME\n");
 
- void azzeraDatoScuderia(char dato[]){
-     int i = 0;
-     while(dato[i] != '\0')
-     {
-         dato[i++] = 0;
-     }
- }
+    for(int i = 0; i < len; i++) printf("%d\t%f\t%d\t%s\t%s\n", s[i].idScuderia, s[i].rating, s[i].totPunti, s[i].monoposto, s[i].nome);
+}
 
 #endif // SCUDERIE_H_INCLUDED

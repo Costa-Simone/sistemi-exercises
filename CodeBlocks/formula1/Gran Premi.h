@@ -14,15 +14,16 @@ typedef struct granpremio{
 
 int punteggi[] = {25, 18, 15, 12, 10, 8, 6, 4, 2, 1};
 
- int caricaGranPremiDaFile(char file_name[], Granpremi gp[]){
+int caricaGranPremiDaFile(char file_name[], Granpremi gp[]){
     FILE* fp;
-    char row_file[BUFFER];
+    char row_file[BUFFER], spl[BUFFER];
     int cnt = 0;
     int i = 0; // Variabile per lo split
     int j = 0;
     char dato[LEN_NOME]; // Array char per lo split
 
     fp = fopen(file_name, "r");
+
     if (fp != NULL)
     {
         while(!feof(fp))
@@ -32,69 +33,33 @@ int punteggi[] = {25, 18, 15, 12, 10, 8, 6, 4, 2, 1};
 
             /* row_file => 1;Gran Premio di Bahrain;5412;57 */
 
-            //ID GRAN PREMIO
-            i = 0;
-            while(row_file[i] != ';')
-            {
-                dato[i] = row_file[i];
-                i++;
-            }
-            j = i + 1;
-            dato[i] = '\0';
-            gp[cnt].idGP = atoi(dato);
-            printf("%d  ", gp[cnt].idGP);
-
-            //NOME
-            azzeraDatoGranPremio(dato);
-            i = 0;
-            while(row_file[j] != ';')
-            {
-                dato[i++] = row_file[j++];
-            }
-            dato[i] = '\0';
-            strcpy(gp[cnt].nome, dato);
-            printf("%s  ", gp[cnt].nome);
-
-            //LUNGHEZZA
-            azzeraDatoGranPremio(dato);
-            j++;
-            i = 0;
-            while(row_file[j] != ';')
-            {
-                dato[i++] = row_file[j++];
-            }
-            dato[i] = '\0';
-            gp[cnt].lung = atoi(dato);
-            printf("%d  ", gp[cnt].lung);
-
-            //NUMERO GIRI
-            azzeraDatoGranPremio(dato);
-            j++;
-            i = 0;
-            while(row_file[j] != '\0')
-            {
-                dato[i++] = row_file[j++];
-            }
-            dato[i] = '\0';
-            gp[cnt].nGiri = atoi(dato);
-            printf("%d\n", gp[cnt].nGiri);
+            // idGP
+            strcpy(spl, splittaString(row_file, 0, ';'));
+            gp[cnt].idGP = atoi(spl);
+            // nome
+            strcpy(spl, splittaString(row_file, 1, ';'));
+            strcpy(gp[cnt].nome, spl);
+            // lung
+            strcpy(spl, splittaString(row_file, 2, ';'));
+            gp[cnt].lung = atoi(spl);
+            // nGiri
+            strcpy(spl, splittaString(row_file, 3, ';'));
+            gp[cnt].nGiri = atoi(spl);
 
             cnt++;
         }
     }
-    else
-        printf("Impossibile aprire il file...\n");
+    else printf("Impossibile aprire il file...\n");
 
     fclose(fp);
-    return cnt;
- }
 
- void azzeraDatoGranPremio(char dato[]){
-     int i = 0;
-     while(dato[i] != '\0')
-     {
-         dato[i++] = 0;
-     }
- }
+    return cnt;
+}
+void elencoGP(Granpremi gp[], int len) {
+    printf("STAMPA ELENCO GRAN PREMI\n");
+    printf("ID\tLUNG\tGIRI\tNOME\n");
+
+    for(int i = 0; i < len; i++) printf("%d\t%d\t%d\t%s\n", gp[i].idGP, gp[i].lung, gp[i].nGiri, gp[i].nome);
+}
 
 #endif // GRANPREMI_H_INCLUDED

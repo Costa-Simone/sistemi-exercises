@@ -12,3 +12,20 @@
 
 1650956036 d:\sistemi e reti\formula1\granpremi.h
 
+1651559814 source:c:\users\windows\documents\github\sistemi-exercises\codeblocks\formula1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utility.h"
+	"Piloti.h"
+	"Scuderie.h"
+	"Gran Premi.h"
+
+1651561330 c:\users\windows\documents\github\sistemi-exercises\codeblocks\formula1\piloti.h
+
+1651558138 c:\users\windows\documents\github\sistemi-exercises\codeblocks\formula1\scuderie.h
+
+1651558746 c:\users\windows\documents\github\sistemi-exercises\codeblocks\formula1\gran premi.h
+
+1651561085 c:\users\windows\documents\github\sistemi-exercises\codeblocks\formula1\utility.h
+

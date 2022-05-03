@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "utility.h"
 #include "Piloti.h"
 #include "Scuderie.h"
 #include "Gran Premi.h"
@@ -12,38 +13,43 @@ int menu();
 
 int main(){
     int scelta;
+    int len_pil = 0, len_scud = 0, len_gp = 0;
+
     Piloti pil[MAX_DATI];
     Scuderie scud[MAX_DATI];
     Granpremi gp[MAX_DATI];
-    int len_pil = 0, len_scud = 0, len_gp = 0;
 
-    printf("\n---------- TABELLA PILOTI ----------\n\n");
     len_pil = caricaPilotiDaFile("File/piloti.csv", pil);
-    printf("\n---------- TABELLA SCUDERIE ----------\n\n");
     len_scud = caricaScuderieDaFile("File/scuderie.csv", scud);
-    printf("\n---------- TABELLA GRAN PREMI ----------\n\n");
     len_gp = caricaGranPremiDaFile("File/granpremi.csv", gp);
 
-    do
-    {
+    do {
         scelta = menu();
+
         fflush(stdin);
         system("@cls||clear");
-        switch(scelta)
-        {
 
+        switch(scelta) {
+        case 1: //Elenco Piloti
+            elencoPiloti(pil, len_pil, len_scud);
+            break;
+        case 2: //Elenco Scuderie
+            elencoScuderie(scud, len_scud);
+            break;
+        case 3: //Elenco GP
+            elencoGP(gp, len_gp);
+            break;
         }
 
         fflush(stdin);
         getchar();
         system("@cls||clear");
-    }
-    while(scelta != 0);
+    } while(scelta != 0);
 
     printf("Programma terminato...\n");
+
     return 0;
 }
-
 int menu(){
     int sc;
     printf("\n---------- MENU ----------\n\n");

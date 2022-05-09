@@ -29,3 +29,22 @@
 
 1651561085 c:\users\windows\documents\github\sistemi-exercises\codeblocks\formula1\utility.h
 
+1652110311 source:c:\users\valbo\onedrive\documenti\github\sistemi-exercises\codeblocks\formula1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utility.h"
+	"piloti.h"
+	"scuderie.h"
+	"granpremi.h"
+
+1652109051 c:\users\valbo\onedrive\documenti\github\sistemi-exercises\codeblocks\formula1\utility.h
+
+1652110549 c:\users\valbo\onedrive\documenti\github\sistemi-exercises\codeblocks\formula1\piloti.h
+	"scuderie.h"
+
+1652110661 c:\users\valbo\onedrive\documenti\github\sistemi-exercises\codeblocks\formula1\scuderie.h
+	"piloti.h"
+
+1652109216 c:\users\valbo\onedrive\documenti\github\sistemi-exercises\codeblocks\formula1\granpremi.h
+

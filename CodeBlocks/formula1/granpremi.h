@@ -34,16 +34,16 @@ int caricaGranPremiDaFile(char file_name[], Granpremi gp[]){
             /* row_file => 1;Gran Premio di Bahrain;5412;57 */
 
             // idGP
-            strcpy(spl, splittaString(row_file, 0, ';'));
+            splittaString(row_file, spl, 0, ';');
             gp[cnt].idGP = atoi(spl);
             // nome
-            strcpy(spl, splittaString(row_file, 1, ';'));
+            splittaString(row_file, spl, 1, ';');
             strcpy(gp[cnt].nome, spl);
             // lung
-            strcpy(spl, splittaString(row_file, 2, ';'));
+            splittaString(row_file, spl, 2, ';');
             gp[cnt].lung = atoi(spl);
             // nGiri
-            strcpy(spl, splittaString(row_file, 3, ';'));
+            splittaString(row_file, spl, 3, ';');
             gp[cnt].nGiri = atoi(spl);
 
             cnt++;

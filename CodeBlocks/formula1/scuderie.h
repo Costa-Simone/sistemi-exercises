@@ -1,8 +1,11 @@
 #ifndef SCUDERIE_H_INCLUDED
 #define SCUDERIE_H_INCLUDED
 
+#include "piloti.h"
+
 #define LEN_SCUDERIA 30
 #define LEN_MONOPOSTO 20
+#define LEN_NOME 20
 
 void azzeraDatoScuderia(char dato[]);
 
@@ -31,19 +34,19 @@ int caricaScuderieDaFile(char file_name[], Scuderie s[]){
             printf("%s\n", row_file);
             /* row_file => 1;Mercedes AMG Petronas;W13;96.5;0 */
             // idScuderia
-            strcpy(spl, splittaString(row_file, 0, ';'));
+            splittaString(row_file, spl, 0, ';');
             s[cnt].idScuderia = atoi(spl);
             // nome
-            strcpy(spl, splittaString(row_file, 1, ';'));
+            splittaString(row_file, spl, 1, ';');
             strcpy(s[cnt].nome, spl);
             // monoposto
-            strcpy(spl, splittaString(row_file, 2, ';'));
+            splittaString(row_file, spl, 2, ';');
             strcpy(s[cnt].monoposto, spl);
             //rating
-            strcpy(spl, splittaString(row_file, 3, ';'));
+            splittaString(row_file, spl, 3, ';');
             s[cnt].rating = atoi(spl);
             // totPunti
-            strcpy(spl, splittaString(row_file, 4, ';'));
+            splittaString(row_file, spl, 4, ';');
             s[cnt].totPunti = atof(spl);
 
             cnt++;
@@ -57,9 +60,9 @@ int caricaScuderieDaFile(char file_name[], Scuderie s[]){
  }
 void elencoScuderie(Scuderie s[], int len) {
     printf("STAMPA ELENCO SCUDERIE\n");
-    printf("ID\tRATING\tTOTPUNTI\tMONOPOSTO\tNOME\n");
+    printf("ID\tRATING\t\tTOTPUNTI\tMONOPOSTO\tNOME\n");
 
-    for(int i = 0; i < len; i++) printf("%d\t%f\t%d\t%s\t%s\n", s[i].idScuderia, s[i].rating, s[i].totPunti, s[i].monoposto, s[i].nome);
+    for(int i = 0; i < len; i++) printf("%d\t%f\t%d\t\t%s\t\t%s\n", s[i].idScuderia, s[i].rating, s[i].totPunti, s[i].monoposto, s[i].nome);
 }
 
 #endif // SCUDERIE_H_INCLUDED

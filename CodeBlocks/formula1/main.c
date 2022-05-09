@@ -3,9 +3,9 @@
 #include <string.h>
 
 #include "utility.h"
-#include "Piloti.h"
-#include "Scuderie.h"
-#include "Gran Premi.h"
+#include "piloti.h"
+#include "scuderie.h"
+#include "granpremi.h"
 
 #define MAX_DATI 50
 
@@ -31,7 +31,7 @@ int main(){
 
         switch(scelta) {
         case 1: //Elenco Piloti
-            elencoPiloti(pil, len_pil, len_scud);
+            elencoPiloti(pil, scud, len_pil, len_scud);
             break;
         case 2: //Elenco Scuderie
             elencoScuderie(scud, len_scud);

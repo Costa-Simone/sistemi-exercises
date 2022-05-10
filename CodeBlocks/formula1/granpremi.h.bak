@@ -103,7 +103,7 @@ void generaGpSingolo(Piloti pil[], int len_pil, Scuderie scud[], int len_scud, G
                     pil[idPil].punti += 0;
                 }
 
-                printf("%d - %s - %d\n", (i + 1), pil[idPil].nome, pil[idPil].punti);
+                printf("%d - %s - %d\n", (i + 1), pil[idPil].nome, pil[i].punti);
             }
         } while(trovato == FALSE);
     }

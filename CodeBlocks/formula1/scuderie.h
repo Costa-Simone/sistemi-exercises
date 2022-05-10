@@ -31,7 +31,6 @@ int caricaScuderieDaFile(char file_name[], Scuderie s[]){
         while(!feof(fp)) {
             //fscanf(fp, "%s", row_file);
             fgets(row_file, BUFFER, fp);
-            printf("%s\n", row_file);
             /* row_file => 1;Mercedes AMG Petronas;W13;96.5;0 */
             // idScuderia
             splittaString(row_file, spl, 0, ';');
@@ -62,7 +61,24 @@ void elencoScuderie(Scuderie s[], int len) {
     printf("STAMPA ELENCO SCUDERIE\n");
     printf("ID\tRATING\t\tTOTPUNTI\tMONOPOSTO\tNOME\n");
 
-    for(int i = 0; i < len; i++) printf("%d\t%f\t%d\t\t%s\t\t%s\n", s[i].idScuderia, s[i].rating, s[i].totPunti, s[i].monoposto, s[i].nome);
+    for(int i = 0; i < len; i++) {
+        printf("%d\t%f\t%d\t\t%s\t\t%s\n", s[i].idScuderia, s[i].rating, s[i].totPunti, s[i].monoposto, s[i].nome);
+    }
+}
+void getNomeScudByID(Scuderie sc[], int len_scud, int codScud, char ret[]) {
+    int i = 0;
+
+    while(i < len_scud && sc[i].idScuderia != codScud) {
+        i++;
+    }
+
+    if(i < len_scud) {
+        strcpy(ret, sc[i].nome);
+    }
+    else {
+        strcpy(ret, "Non trovato");
+    }
+
 }
 
 #endif // SCUDERIE_H_INCLUDED

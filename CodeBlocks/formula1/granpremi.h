@@ -2,8 +2,11 @@
 #define GRANPREMI_H_INCLUDED
 
 #define LEN_GP 30
+#define MAX_PIL_GARA 15
 
 void azzeraDatoGranPremio(char dato[]);
+
+typedef int bool;
 
 typedef struct granpremio{
     int idGP;
@@ -59,7 +62,51 @@ void elencoGP(Granpremi gp[], int len) {
     printf("STAMPA ELENCO GRAN PREMI\n");
     printf("ID\tLUNG\tGIRI\tNOME\n");
 
-    for(int i = 0; i < len; i++) printf("%d\t%d\t%d\t%s\n", gp[i].idGP, gp[i].lung, gp[i].nGiri, gp[i].nome);
+    for(int i = 0; i < len; i++) {
+        printf("%d\t%d\t%d\t%s\n", gp[i].idGP, gp[i].lung, gp[i].nGiri, gp[i].nome);
+    }
+}
+void generaGpSingolo(Piloti pil[], int len_pil, Scuderie scud[], int len_scud, Granpremi gp[], int len_gp) {
+    int idGp, idPil;
+    int vPil[MAX_PIL_GARA] = {0};
+
+    srand(time(NULL));
+    //1. Ricerca e stampa Gp
+    idGp = rand() % len_gp
+
+    printf("Via al %s\n", gp[idGp].nome);
+    //2. Solo MAX_PIL_GARA possono partecipare
+    for(int i = 0; i < MAX_PIL_GARA; i++) {
+        bool trovato = TRUE;
+
+        do {
+            int j = 0;
+
+            idPil = rand() % len_pil;
+
+            while(j < MAX_PIL_GARA && vPil[j] != idPil) {
+                j++;
+            }
+
+            if(vPil[j] == idPil) {
+                trovato = FALSE;
+            }
+            else {
+                vPil[i] = idPil;
+                pil[idPil].totGare++;
+
+                if(i < 10) {
+                    pil[idPil].punti += punteggi[i];
+                    scud[getPosScudByID(pil[idPil].codScuderia, scud, len_scud)].totPunti += punteggi[i];
+                }
+                else {
+                    pil[idPil].punti += 0;
+                }
+
+                printf("%d - %s - %d\n", (i + 1), pil[idPil].nome, pil[i].punti);
+            }
+        } while(trovato == FALSE);
+    }
 }
 
 #endif // GRANPREMI_H_INCLUDED

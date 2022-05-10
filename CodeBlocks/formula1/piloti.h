@@ -63,19 +63,17 @@ typedef struct pilota{
 
     return cnt;
  }
-void elencoPiloti(Piloti pil[], Scuderie scud[], int  len_pil, int len_scud) {
+void elencoPiloti(Piloti pil[], Scuderie sc[], int  len_pil, int len_scud) {
+    char scud[BUFFER];
+
     printf("STAMPA ELENCO PILOTI\n");
-    printf("ID\tTOT GARE\tPUNTI\tSCUDERIA\t\tNOME\n");
+    printf("ID\tTOT GARE\tPUNTI\tNOME\t\t\tSCUDERIA\n");
 
     for(int i = 0; i < len_pil; i++) {
-        int j = 0;
+        getNomeScudByID(sc, len_scud, pil[i].codScuderia, scud);
 
-        while(pil[i].codScuderia == scud[j].idScuderia) {
-            j++;
-        }
-
-        printf("%d\t%d\t\t%d\t%s\t%s\n", pil[i].idPilota, pil[i].totGare, pil[i].punti, scud  [j].nome, pil[i].nome);
-    } //printf("%d\t%d\t%d\t%s\n", gp[i].idGP, gp[i].lung, gp[i].nGiri, gp[i].nome);
+        printf("%d\t%d\t\t%d\t%s \t\t%s\n", pil[i].idPilota, pil[i].totGare, pil[i].punti, pil[i].nome, scud);
+    }
 }
 
 #endif // PILOTI_H_INCLUDED

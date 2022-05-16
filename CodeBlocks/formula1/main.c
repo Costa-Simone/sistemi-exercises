@@ -3,10 +3,10 @@
 #include <string.h>
 #include <time.h>
 
-#include "utility.h"
-#include "piloti.h"
-#include "scuderie.h"
-#include "granpremi.h"
+#include "Utility.h"
+#include "Scuderie.h"
+#include "Piloti.h"
+#include "Gran Premi.h"
 
 #define MAX_DATI 50
 
@@ -14,61 +14,50 @@ int menu();
 
 int main(){
     int scelta;
-    int len_pil = 0, len_scud = 0, len_gp = 0;
-
     Piloti pil[MAX_DATI];
     Scuderie scud[MAX_DATI];
     Granpremi gp[MAX_DATI];
+    int len_pil = 0, len_scud = 0, len_gp = 0;
 
     len_pil = caricaPilotiDaFile("File/piloti.csv", pil);
     len_scud = caricaScuderieDaFile("File/scuderie.csv", scud);
     len_gp = caricaGranPremiDaFile("File/granpremi.csv", gp);
 
-    do {
+    do
+    {
         scelta = menu();
-
         fflush(stdin);
         system("@cls||clear");
-
-        switch(scelta) {
-        case 1: //Elenco Piloti
-            elencoPiloti(pil, scud, len_pil, len_scud);
+        switch(scelta)
+        {
+        case 1: /** Elenco Piloti **/
+            elencoPiloti(pil, len_pil, scud, len_scud);
             break;
-
-        case 2: //Elenco Scuderie
+        case 2: /** Elenco Scuderie **/
             elencoScuderie(scud, len_scud);
             break;
-
-        case 3: //Elenco GP
+        case 3: /** Elenco GP **/
             elencoGP(gp, len_gp);
             break;
-
-        case 4: //Avvia GP Singolo
-            generaGpSingolo(pil, len_pil, scud, len_scud, gp, len_gp);
+        case 4: /** Avvia GP Singolo **/
+            generaGPSingolo(pil, len_pil, scud, len_scud, gp, len_gp);
             break;
-
-        case 5: //Avvia tutti i Gran Premi (+ Richiesta stampa su File)
+        case 6: /** Mostra Classifica Piloti (+ Richiesta stampa su File) **/
+            mostraClassificaPiloti(pil, len_pil);
             break;
-
-        case 6: //Mostra Classifica Piloti (+ Richiesta stampa su File)
-            break;
-
-        case 7: //Mostra Classifica Scuderie (+ Richiesta stampa su File)
-            break;
-
-        case 8: //Resetta Punteggi Piloti & Scuderie
+        case 7: /** Mostra Classifica Scuderie (+ Richiesta stampa su File) **/
+            mostraClassificaScuderie(scud, len_scud);
             break;
         }
-
         fflush(stdin);
         getchar();
         system("@cls||clear");
-    } while(scelta != 0);
-
+    }
+    while(scelta != 0);
     printf("Programma terminato...\n");
-
     return 0;
 }
+
 int menu(){
     int sc;
     printf("---------- MENU ----------\n\n");

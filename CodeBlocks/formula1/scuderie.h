@@ -1,13 +1,14 @@
 #ifndef SCUDERIE_H_INCLUDED
 #define SCUDERIE_H_INCLUDED
 
-#include "piloti.h"
-
 #define LEN_SCUDERIA 30
 #define LEN_MONOPOSTO 20
 #define LEN_NOME 20
+#define BUFFER 100
+#define TRUE 1
+#define FALSE 0
 
-void azzeraDatoScuderia(char dato[]);
+typedef int bool;
 
 typedef struct scuderia{
     int idScuderia;
@@ -19,66 +20,135 @@ typedef struct scuderia{
 
 int caricaScuderieDaFile(char file_name[], Scuderie s[]){
     FILE* fp;
-    char row_file[BUFFER], spl[BUFFER];
+    char row_file[BUFFER];
+    char spl[BUFFER];
     int cnt = 0;
-    int i = 0; // Variabile per lo split
-    int j = 0;
-    char dato[LEN_NOME]; // Array char per lo split
 
     fp = fopen(file_name, "r");
-
-    if (fp != NULL) {
-        while(!feof(fp)) {
-            //fscanf(fp, "%s", row_file);
+    if (fp != NULL)
+    {
+        while(!feof(fp))
+        {
             fgets(row_file, BUFFER, fp);
-            /* row_file => 1;Mercedes AMG Petronas;W13;96.5;0 */
-            // idScuderia
+
+            /** row_file => 1;Mercedes AMG Petronas;W13;96.5;0 **/
+
+            ///ID SCUDERIA
             splittaString(row_file, spl, 0, ';');
             s[cnt].idScuderia = atoi(spl);
-            // nome
+
+            ///NOME
             splittaString(row_file, spl, 1, ';');
             strcpy(s[cnt].nome, spl);
-            // monoposto
+
+            ///MONOPOSTO
             splittaString(row_file, spl, 2, ';');
             strcpy(s[cnt].monoposto, spl);
-            //rating
+
+            ///RATING
             splittaString(row_file, spl, 3, ';');
-            s[cnt].rating = atoi(spl);
-            // totPunti
-            splittaString(row_file, spl, 4, ';');
-            s[cnt].totPunti = atof(spl);
+            s[cnt].rating = atof(spl);
+
+            ///TOTALE PUNTI
+            splittaString(row_file, spl, 4, '\0');
+            s[cnt].totPunti = atoi(spl);
 
             cnt++;
         }
     }
-    else printf("Impossibile aprire il file...\n");
-
+    else
+        printf("Impossibile aprire il file...\n");
     fclose(fp);
-
     return cnt;
  }
-void elencoScuderie(Scuderie s[], int len) {
-    printf("STAMPA ELENCO SCUDERIE\n");
-    printf("ID\tRATING\t\tTOTPUNTI\tMONOPOSTO\tNOME\n");
 
-    for(int i = 0; i < len; i++) {
-        printf("%d\t%f\t%d\t\t%s\t\t%s\n", s[i].idScuderia, s[i].rating, s[i].totPunti, s[i].monoposto, s[i].nome);
-    }
+void elencoScuderie(Scuderie s[], int len){
+     int i;
+
+     printf("---------- STAMPA ELENCO SCUDERIE ----------\n\n");
+     printf("ID\tRATING\tPUNTI\tMONOPOSTO\tNOME\n");
+     for(i = 0; i < len; i++)
+     {
+         printf("%d\t%.1f\t%d\t%s\t\t%s\n", s[i].idScuderia, s[i].rating, s[i].totPunti, s[i].monoposto, s[i].nome);
+     }
 }
-void getNomeScudByID(Scuderie sc[], int len_scud, int codScud, char ret[]) {
+
+void getNomeScudByID(Scuderie s[], int len_scud, int codScud, char ret[]){
     int i = 0;
 
-    while(i < len_scud && sc[i].idScuderia != codScud) {
+    while(i < len_scud && s[i].idScuderia != codScud)
         i++;
-    }
-
-    if(i < len_scud) {
-        strcpy(ret, sc[i].nome);
-    }
-    else {
+    if(i < len_scud)
+        strcpy(ret, s[i].nome);
+    else
         strcpy(ret, "Non trovato");
-    }
-
 }
 
-#endif // SCUDERIE_H_INCLUDED
+int getPosScudByID(int codScud, Scuderie s[], int len_scud){
+    int i = 0;
+    bool trovato = FALSE;
+
+    while(i < len_scud && s[i].idScuderia != codScud)
+        i++;
+    if(i < len_scud)
+        trovato = TRUE;
+    else
+        trovato = FALSE;
+    if(trovato)
+        return i;
+}
+
+void mostraClassificaScuderie(Scuderie s[], int len_scud){
+     char risposta = "";
+
+     ordinaScuderiePunti(s, len_scud);
+     printf("---------- STAMPA CLASSIFICA SCUDERIE ----------\n\n");
+     printf("ID\tRATING\tPUNTI\tMONOPOSTO\tNOME\n");
+     for(int i = 0; i < len_scud; i++)
+     {
+         printf("%d\t%.1f\t%d\t%s\t\t%s\n", s[i].idScuderia, s[i].rating, s[i].totPunti, s[i].monoposto, s[i].nome);
+     }
+     printf("\nDesideri stampa su File?:[S/N] ");
+     scanf("%c", &risposta);
+     stampaSuFileScuderie(s, len_scud);
+}
+
+void ordinaScuderiePunti(Scuderie s[], int len_scud){
+     int posmin;
+     Scuderie aus;
+
+     for(int i = 0; i <= len_scud - 2; i++)
+     {
+         posmin = i;
+         for(int j = i + 1; j <= len_scud - 1; j++)
+         {
+             if(s[posmin].totPunti < s[j].totPunti)
+                posmin = j;
+         }
+         if(posmin != i)
+         {
+             aus = s[i];
+             s[i] = s[posmin];
+             s[posmin] = aus;
+         }
+     }
+}
+
+void stampaSuFileScuderie(Scuderie s[], int len_scud){
+    FILE* fp;
+
+    fp = fopen("File/Classifica Scuderie.csv", "w");
+    if (fp != NULL)
+    {
+        for(int i = 0; i < len_scud; i++)
+        {
+            fprintf(fp,"%d;%.1f;%d;%s;%s\n", s[i].idScuderia, s[i].rating, s[i].totPunti, s[i].monoposto, s[i].nome);
+        }
+        printf("\nStampa completata");
+    }
+    else
+        printf("Impossibile aprire il file...\n");
+    fclose(fp);
+}
+
+#endif /// SCUDERIE_H_INCLUDED

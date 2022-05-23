@@ -62,7 +62,6 @@ int caricaGranPremiDaFile(char file_name[], Granpremi gp[]){
 void elencoGP(Granpremi gp[], int len){
      int i;
 
-     printf("---------- STAMPA ELENCO GRAN PREMI ----------\n\n");
      printf("ID\tLUNG\tGIRI\tNOME\n");
      for(i = 0; i < len; i++)
      {
@@ -73,7 +72,7 @@ void elencoGP(Granpremi gp[], int len){
 void generaGPSingolo(Piloti p[], int len_pil, Scuderie s[], int len_scud, Granpremi gp[], int len_gp){
     int idGP, idPil;
     int vPil[MAX_PIL_GARA] = {0};   ///Azzero array
-    int i, j, pos = 0;
+    int i, j;
     bool trovato;
     srand(time(NULL));
 
@@ -101,20 +100,79 @@ void generaGPSingolo(Piloti p[], int len_pil, Scuderie s[], int len_scud, Granpr
                 ///Pilota non trovato
                 vPil[i] = idPil;
                 p[idPil].totGare ++;
-                pos = getPosScudByID(p[idPil].codScuderia, s, len_scud);
                 if(i < 10)
                 {
                     p[idPil].punti += punteggi[i];
-                    s[pos].totPunti += punteggi[i];
+                    s[getPosScudByID(p[idPil].codScuderia, s, len_scud)].totPunti += punteggi[i];
                 }
-                printf("%d - %s - %d - %s\n", (i + 1), p[idPil].nome, p[idPil].punti, s[pos].nome);
+                printf("%d - %s - %d\n", (i + 1), p[idPil].nome, p[idPil].punti);
             }
         }
         while(trovato == TRUE);
     }
-    printf("\n");
-    for(i = 0; i < len_scud; i++)
-        printf("%s - %d\n", s[i].nome, s[i].totPunti);
 }
 
+void generaTuttiGP(Piloti p[], int len_pil, Scuderie s[], int len_scud, Granpremi gp[], int len_gp){
+    int idPil;
+    int vPil[MAX_PIL_GARA] = {0};   ///Azzero array
+    int i, j, k;
+    bool trovato;
+    srand(time(NULL));
+
+    printf("---------- GENERA TUTTI I GRAN PREMI ----------\n\n");
+
+    for(k = 0; k < len_gp; k++)
+    {
+        printf("VIA AL: %s\n\n", gp[k].nome);
+        for(i = 0; i < MAX_PIL_GARA; i++)
+        {
+            do
+            {
+                idPil = rand() % len_pil;
+                trovato = FALSE;
+                j = 0;
+                ///Inizio ricerca idPil in vPil
+                while(j < MAX_PIL_GARA && vPil[j] != idPil)
+                    j++;
+                if(j < MAX_PIL_GARA)
+                    trovato = TRUE;
+                else
+                {
+                    ///Pilota non trovato
+                    vPil[i] = idPil;
+                    p[idPil].totGare ++;
+                    if(i < 10)
+                    {
+                        p[idPil].punti += punteggi[i];
+                        s[getPosScudByID(p[idPil].codScuderia, s, len_scud)].totPunti += punteggi[i];
+                    }
+                    printf("%d - %s - %d\n", (i + 1), p[idPil].nome, p[idPil].punti);
+                }
+            }
+            while(trovato == TRUE);
+        }
+        printf("\n\n");
+        for(i = 0; i < MAX_PIL_GARA; i++)
+            vPil[i] = 0;
+        //stampaSuFileGP(p, len_pil, gp[k].nome);
+    }
+}
+/*
+void stampaSuFileGP(Piloti p[], int len_pil, Scuderie s[], int len_scud, Granpremi gp[], int len_gp){
+    FILE* fp;
+
+    fp = fopen("File/" + nomeGP + ".csv", "w");
+    if (fp != NULL)
+    {
+        for(int i = 0; i < len_gp; i++)
+        {
+            fprintf(fp,"%d;%.1f;%d;%s;%s\n", s[i].idScuderia, s[i].rating, s[i].totPunti, s[i].monoposto, s[i].nome);
+        }
+        printf("\nStampa completata");
+    }
+    else
+        printf("Impossibile aprire il file...\n");
+    fclose(fp);
+}
+*/
 #endif /// GRANPREMI_H_INCLUDED

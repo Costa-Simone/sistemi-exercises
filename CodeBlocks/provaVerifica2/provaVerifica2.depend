@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1653330487 source:c:\users\valbo\onedrive\documenti\github\sistemi-exercises\codeblocks\provaverifica2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

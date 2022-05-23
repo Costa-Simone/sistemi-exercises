@@ -1,0 +1,12 @@
+1;Monster Energy Yamaha MotoGP;Yamaha
+2;Aprilia Racing;Aprilia
+3;Gresini Racing MotoGP;Ducati
+4;Team Suzuki Ecstar;Suzuki
+5;Ducati Lenovo Team;Ducati
+6;Pramac Racing;Ducati
+7;Red Bull KTM Factory Racing;KTM
+8;Repsol Honda Team;Honda
+9;LCR Honda;Honda
+10;VR46 Racing Team;Ducati
+11;WithU Yamaha RNF MotoGP;Yamaha
+12;Tech 3 KTM Factory Racing;KTM

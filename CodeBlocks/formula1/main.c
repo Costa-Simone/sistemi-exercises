@@ -14,6 +14,7 @@ int menu();
 
 int main(){
     int scelta;
+    char stampa;
     Piloti pil[MAX_DATI];
     Scuderie scud[MAX_DATI];
     Granpremi gp[MAX_DATI];
@@ -31,19 +32,31 @@ int main(){
         switch(scelta)
         {
         case 1: /** Elenco Piloti **/
+            printf("---------- STAMPA ELENCO PILOTI ----------\n\n");
             elencoPiloti(pil, len_pil, scud, len_scud);
             break;
         case 2: /** Elenco Scuderie **/
+            printf("---------- STAMPA ELENCO SCUDERIE ----------\n\n");
             elencoScuderie(scud, len_scud);
             break;
         case 3: /** Elenco GP **/
+            printf("---------- STAMPA ELENCO GRAN PREMI ----------\n\n");
             elencoGP(gp, len_gp);
             break;
         case 4: /** Avvia GP Singolo **/
             generaGPSingolo(pil, len_pil, scud, len_scud, gp, len_gp);
             break;
+        case 5: /** Avvia tutti i Gran Premi (+ Richiesta stampa su File) **/
+            generaTuttiGP(pil, len_pil, scud, len_scud, gp, len_gp);
+            break;
         case 6: /** Mostra Classifica Piloti (+ Richiesta stampa su File) **/
-            mostraClassificaPiloti(pil, len_pil);
+            fflush(stdin);
+            printf("---------- STAMPA CLASSIFICA PILOTI ----------\n\n");
+            mostraClassificaPiloti(pil, len_pil, scud, len_scud);
+            printf("\nVuoi la stampa su File? [y/n]: ");
+            scanf("%c", &stampa);
+            if(stampa == 'y')
+                stampaSuFilePiloti(pil, len_pil);
             break;
         case 7: /** Mostra Classifica Scuderie (+ Richiesta stampa su File) **/
             mostraClassificaScuderie(scud, len_scud);

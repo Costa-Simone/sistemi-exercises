@@ -65,7 +65,6 @@ void elencoPiloti(Piloti p[], int len_pil, Scuderie s[], int len_scud){
      int i;
      char scud[BUFFER];
 
-     printf("---------- STAMPA ELENCO PILOTI ----------\n\n");
      printf("ID\tGARE\tPUNTI\tNOME\t\t\tSCUDERIA\n");
      for(i = 0; i < len_pil; i++)
      {
@@ -74,19 +73,9 @@ void elencoPiloti(Piloti p[], int len_pil, Scuderie s[], int len_scud){
      }
 }
 
-void mostraClassificaPiloti(Piloti p[], int len_pil){
-     char risposta = "";
-
+void mostraClassificaPiloti(Piloti p[], int len_pil, Scuderie s[], int len_scud){
      ordinaPilotiPunti(p, len_pil);
-     printf("---------- STAMPA CLASSIFICA PILOTI ----------\n\n");
-     printf("ID\tGARE\tPUNTI\tNOME\n");
-     for(int i = 0; i < len_pil; i++)
-     {
-         printf("%d\t%d\t%d\t%s\n", p[i].idPilota, p[i].totGare, p[i].punti, p[i].nome);
-     }
-     printf("\nDesideri stampa su File?:[S/N] ");
-     scanf("%c", &risposta);
-     stampaSuFilePiloti(p, len_pil);
+     elencoPiloti(p, len_pil, s, len_scud);
 }
 
 void ordinaPilotiPunti(Piloti p[], int len_pil){
@@ -116,9 +105,10 @@ void stampaSuFilePiloti(Piloti p[], int len_pil){
     fp = fopen("File/Classifica Piloti.csv", "w");
     if (fp != NULL)
     {
+        fprintf(fp, "CLASSIFICA PILOTI\n");
         for(int i = 0; i < len_pil; i++)
         {
-            fprintf(fp,"%d;%d;%d;%s\n",p[i].idPilota, p[i].totGare, p[i].punti, p[i].nome);
+            fprintf(fp, "%d;%d;%d;%s\n", p[i].idPilota, p[i].totGare, p[i].punti, p[i].nome);
         }
         printf("\nStampa completata");
     }

@@ -65,7 +65,6 @@ int caricaScuderieDaFile(char file_name[], Scuderie s[]){
 void elencoScuderie(Scuderie s[], int len){
      int i;
 
-     printf("---------- STAMPA ELENCO SCUDERIE ----------\n\n");
      printf("ID\tRATING\tPUNTI\tMONOPOSTO\tNOME\n");
      for(i = 0; i < len; i++)
      {
@@ -86,16 +85,10 @@ void getNomeScudByID(Scuderie s[], int len_scud, int codScud, char ret[]){
 
 int getPosScudByID(int codScud, Scuderie s[], int len_scud){
     int i = 0;
-    bool trovato = FALSE;
 
-    while(i < len_scud && s[i].idScuderia != codScud)
+    while(s[i].idScuderia != codScud)
         i++;
-    if(i < len_scud)
-        trovato = TRUE;
-    else
-        trovato = FALSE;
-    if(trovato)
-        return i;
+    return i;
 }
 
 void mostraClassificaScuderie(Scuderie s[], int len_scud){
@@ -108,9 +101,10 @@ void mostraClassificaScuderie(Scuderie s[], int len_scud){
      {
          printf("%d\t%.1f\t%d\t%s\t\t%s\n", s[i].idScuderia, s[i].rating, s[i].totPunti, s[i].monoposto, s[i].nome);
      }
-     printf("\nDesideri stampa su File?:[S/N] ");
+     printf("\nDesideri stampa su File?:[y/n] ");
      scanf("%c", &risposta);
-     stampaSuFileScuderie(s, len_scud);
+     if(risposta == 'y')
+        stampaSuFileScuderie(s, len_scud);
 }
 
 void ordinaScuderiePunti(Scuderie s[], int len_scud){

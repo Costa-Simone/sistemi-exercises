@@ -15,12 +15,15 @@ void ex04(int a[], int n, int* min, int* max);
 int ex05(int a[], int n, int* sommaPos, int* sommaNeg);
 void ex06(int a[], int n, int pari[], int dispari[], int* nPari, int* nDispari);
 int ex07(int v[]);
+void ex08(int a[], int n);
+int ex09(int a[], int n, int x);
+int ex10(int a[], int n);
 
 int main()
 {
     int scelta;
     int a[MAX], pari[MAX], dispari[MAX], v[10];
-    int n, nPari = 0, nDispari = 0, somma = 0, media, min = 100, max = -21, sommaPos = 0, sommaNeg = 0;
+    int n, nPari = 0, nDispari = 0, somma = 0, media, min = 100, max = -21, sommaPos = 0, sommaNeg = 0, x;
 
     do
     {
@@ -79,6 +82,19 @@ int main()
             break;
 
         case 8:
+            ex08(a, n);
+            ex02(n, a, "Il vettore ordinato e':\n");
+            break;
+
+        case 9:
+            printf("Inserisci il valore da cercare: ");
+            scanf("%d", &x);
+
+            printf("\n\nIl valore %d e' apparso %d volte...", x, ex09(a, n, x));
+            break;
+
+        case 10:
+            printf("Nel vettore sono contenuti %d numeri primi...", ex10(a, n));
             break;
 
         default:
@@ -91,6 +107,51 @@ int main()
     while(scelta != 0);
     printf("Programma terminato...\n");
     return 0;
+}
+int ex10(int a[], int n) {
+    int cont = 0;
+
+    for(int i = 0; i < n; i++) {
+        if(abs(a[i]) % 2 != 0 && abs(a[i]) % 3 != 0) {
+            cont++;
+        }
+    }
+
+    return cont;
+}
+int ex09(int a[], int n, int x) {
+    int cont = 0;
+
+    for(int i = 0; i < n; i++) {
+        if(a[i] == x) {
+            cont++;
+        }
+    }
+
+    return cont;
+}
+void ex08(int a[], int n) {
+    int PosMin, aus;
+
+    for (int i = 0; i <= n - 2; i++)
+    {
+        PosMin = i;
+
+        for (int j = i + 1; j <= n - 1; j++)
+        {
+            if (a[PosMin] > a[j])
+            {
+                PosMin = j;
+            }
+        }
+
+        if (PosMin != i)
+        {
+            aus = a[i];
+            a[i] = a[PosMin];
+            a[PosMin] = aus;
+        }
+    }
 }
 int ex07(int v[]) {
     int j = 0, esci = FALSE;

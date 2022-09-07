@@ -191,34 +191,6 @@ void ex03(int d, int m, int a, int bise, int totGiorni,  int gMese[], char mesi[
 
     gSett = totGiorni % 7;
 
-    printf("\n");
-
-    while(day != d) {
-        gSett++;
-        day++;
-    }
-
-    printf("\nIl %d e' di %s\n\n", d, settimana[gSett % 7]);
-
-    while(gSett % 7 != 0) {
-        gSett--;
-        aus--;
-    }
-
-    for(int i = 0; i < 7; i++) {
-        printf("%s ", settimana[i]);
-    }
-
-    printf("\n");
-
-    for(int i = 0; i < 7; i++) {
-        if((aus + i <= 0)) {
-            printf("   ");
-        }
-        else {
-            printf("%2d ", (aus + i));
-        }
-    }
 }
 void ex02(int inpAnno, int bise, int totGiorni,  int gMese[], char mesi[12][4], char settimana[7][3]) {
     printf("\n");
@@ -348,7 +320,7 @@ void primoGiornoAnno(int inpAnno, int* totGiorni) {
                 aus += 2;
             }
 
-            if(aus == 7) {
+            if(aus >= 7) {
                 aus -= 7;
             }
         }

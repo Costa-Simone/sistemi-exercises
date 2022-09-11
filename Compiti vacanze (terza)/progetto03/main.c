@@ -190,7 +190,16 @@ void ex03(int d, int m, int a, int bise, int totGiorni,  int gMese[], char mesi[
     }
 
     gSett = totGiorni % 7;
+    totGiorni += d - 1;
 
+    printf("\n");
+
+    while(day != d) {
+        gSett++;
+        day++;
+    }
+
+    printf("\nIl %d e' di %s e cade nella %d settimana dell'anno\n\n", d, settimana[gSett % 7], (totGiorni / 7));
 }
 void ex02(int inpAnno, int bise, int totGiorni,  int gMese[], char mesi[12][4], char settimana[7][3]) {
     printf("\n");

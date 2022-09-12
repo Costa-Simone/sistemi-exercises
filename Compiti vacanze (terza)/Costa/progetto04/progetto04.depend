@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1657715627 source:c:\users\valbo\onedrive\documenti\github\sistemi-exercises\compiti vacanze (terza)\progetto04\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1663834014 source:c:\users\s.costa.2235\documents\github\sistemi-exercises\quarta\ex03 stringa palindroma\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

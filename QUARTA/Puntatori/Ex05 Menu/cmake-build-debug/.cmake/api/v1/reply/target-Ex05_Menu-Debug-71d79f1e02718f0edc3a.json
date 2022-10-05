@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "untitled.exe"
+			"path" : "Ex05_Menu.exe"
 		},
 		{
-			"path" : "untitled.pdb"
+			"path" : "Ex05_Menu.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -41,17 +41,17 @@
 					"fragment" : "-g"
 				},
 				{
-					"fragment" : "-std=gnu++14"
+					"fragment" : "-std=gnu99"
 				}
 			],
-			"language" : "CXX",
+			"language" : "C",
 			"languageStandard" : 
 			{
 				"backtraces" : 
 				[
 					1
 				],
-				"standard" : "14"
+				"standard" : "99"
 			},
 			"sourceIndexes" : 
 			[
@@ -59,7 +59,7 @@
 			]
 		}
 	],
-	"id" : "untitled::@6890427a1f51a3e7e1df",
+	"id" : "Ex05_Menu::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -77,10 +77,10 @@
 				"role" : "libraries"
 			}
 		],
-		"language" : "CXX"
+		"language" : "C"
 	},
-	"name" : "untitled",
-	"nameOnDisk" : "untitled.exe",
+	"name" : "Ex05_Menu",
+	"nameOnDisk" : "Ex05_Menu.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -101,7 +101,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "main.cpp",
+			"path" : "main.c",
 			"sourceGroupIndex" : 0
 		}
 	],

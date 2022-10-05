@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "untitled",
+					"name" : "Ex05_Menu",
 					"targetIndexes" : 
 					[
 						0
@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "untitled::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-untitled-Debug-b963f71e0037de5c5c86.json",
-					"name" : "untitled",
+					"id" : "Ex05_Menu::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Ex05_Menu-Debug-71d79f1e02718f0edc3a.json",
+					"name" : "Ex05_Menu",
 					"projectIndex" : 0
 				}
 			]
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/valbo/CLionProjects/untitled/cmake-build-debug",
-		"source" : "C:/Users/valbo/CLionProjects/untitled"
+		"build" : "C:/Users/valbo/CLionProjects/Ex05 Menu/cmake-build-debug",
+		"source" : "C:/Users/valbo/CLionProjects/Ex05 Menu"
 	},
 	"version" : 
 	{

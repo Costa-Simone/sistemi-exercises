@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -6,16 +7,19 @@
 int menu();
 void modificaStringa(char *s);
 void invertiStringa(char *s);
-void concatenaStringhe(char *s1, char *s2);
+int concatenaStringhe(char *s1, char *s2);
 void caricaVett(int *v, int len);
 void stampaVett(int *v, int len);
 void ordinaVett(int *v, int len);
 void cifraturaDiCesare(char *s, char c);
 void stringaMaiuscola(char *s);
+void decifraturaDiCesare(char *s, char c);
+void cifraturaSemplice(char *s, int n);
+void decifraturaSemplice(char *s, int n);
 
 int main()
 {
-    int scelta, len, v[MAX];
+    int scelta, len, v[MAX], n;
     char s1[MAX], s2[MAX], c;
 
     do {
@@ -46,8 +50,12 @@ int main()
                 gets(s1);
                 printf("Frase 2 ->");
                 gets(s2);
-                concatenaStringhe(s1, s2);
-                printf("\nLe stringhe concatenate sono: %s", s1);
+                if(concatenaStringhe(s1, s2) == 1) {
+                    printf("\nLe stringhe concatenate sono: %s", s1);
+                }
+                else {
+                    printf("\nImpossibile concatenare le stringhe!");
+                }
                 break;
 
             case 4: // Ordina vettore di interi
@@ -68,6 +76,19 @@ int main()
                 printf("\nFrase ->");
                 gets(s1);
                 stringaMaiuscola(s1);
+                printf("Inserisci il valore:");
+                scanf("%d", &n);
+                cifraturaSemplice(s1, n);
+                printf("\nLa stringa cifrata e': %s", s1);
+                decifraturaSemplice(s1, n);
+                printf("\nLa stringa decifrata e': %s", s1);
+                break;
+
+            case 6:
+                getchar();
+                printf("\nFrase ->");
+                gets(s1);
+                stringaMaiuscola(s1);
                 printf("Inserisci la chiave con lettera dell'alfabeto:");
                 scanf("%c", &c);
 
@@ -75,11 +96,16 @@ int main()
                     c -= 32;
                 }
 
+                printf("\nLa stringa decifrata e': %s", s1);
                 cifraturaDiCesare(s1, c);
                 printf("\nLa stringa cifrata e': %s", s1);
+                decifraturaDiCesare(s1, c);
+                printf("\nLa stringa decifrata e': %s", s1);
+                getchar();
                 break;
         }
 
+        fflush(stdin);
         getchar();
     } while(scelta != 0);
 
@@ -88,6 +114,28 @@ int main()
     return 0;
 }
 
+void cifraturaSemplice(char *s, int n) {
+    for(; *s != '\0'; s++) {
+        if(*s >= 'A' && *s <= 'Z') {
+            *s += n;
+
+            if(*s > 'Z') {
+                *s -= 26;
+            }
+        }
+    }
+}
+void decifraturaSemplice(char *s, int n) {
+    for(; *s != '\0'; s++) {
+        if(*s >= 'A' && *s <= 'Z') {
+            *s -= n;
+
+            if(*s < 'A') {
+                *s += 26;
+            }
+        }
+    }
+}
 void stringaMaiuscola(char *s) {
     char *p;
 
@@ -98,14 +146,28 @@ void stringaMaiuscola(char *s) {
     }
 }
 void cifraturaDiCesare(char *s, char c) {
-    int key = 'A' - c;
-    char *p;
+    int key = c - 'A';
 
-    for(p = s; *p != '\0'; p++) {
-        *p += key;
+    for(; *s != '\0'; s++) {
+        if(*s >= 'A' && *s <= 'Z') {
+            *s += key;
 
-        if(*p > 'Z') {
-            *p -= 'A';
+            if(*s > 'Z') {
+                *s -= 26;
+            }
+        }
+    }
+}
+void decifraturaDiCesare(char *s, char c) {
+    int key = c - 'A';
+
+    for(; *s != '\0'; s++) {
+        if(*s >= 'A' && *s <= 'Z') {
+            *s -= key;
+
+            if(*s < 'A') {
+                *s += 26;
+            }
         }
     }
 }
@@ -139,20 +201,34 @@ void ordinaVett(int *v, int len) {
         }
     }
 }
-void concatenaStringhe(char *s1, char *s2) {
+int concatenaStringhe(char *s1, char *s2) {
     char *p, *p2;
+    int controlla = 0, len1, len2;
 
-    for(p = s1; *p != '\0'; p++);
 
-    *p = ' ';
-    p++;
+    for(len1 = 0, p = s1; *p != '\0'; len1++, p++);
+    for(len2 = 0, p2 = s2; *p2 != '\0'; len2++, p2++);
 
-    for(p2 = s2; *p2 != '\0'; p2++) {
-        *p = *p2;
+    if((len1 + len2) > MAX - 1) {
+        controlla = 0;
+    }
+    else {
+        for(p = s1; *p != '\0'; p++);
+
+        *p = ' ';
         p++;
+
+        for(p2 = s2; *p2 != '\0'; p2++) {
+            *p = *p2;
+            p++;
+        }
+
+        *p = '\0';
+
+        controlla = 1;
     }
 
-    *p = '\0';
+    return controlla;
 }
 void invertiStringa(char *s) {
     char *p, *p2, aus;
@@ -192,7 +268,8 @@ int menu() {
     printf("2. Inverti stringa\n");
     printf("3. Concatena due stringhe\n");
     printf("4. Ordina vettore di interi\n");
-    printf("5. Cifratura di Cesare\n");
+    printf("5. Cifratura semplice\n");
+    printf("6. Cifratura di Cesare\n");
     printf("0. Esci\n");
 
     do {

@@ -49,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/valbo/CLionProjects/Ex05 Menu/cmake-build-debug",
-		"source" : "C:/Users/valbo/CLionProjects/Ex05 Menu"
+		"build" : "C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug",
+		"source" : "C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 3
+		"minor" : 4
 	}
 }

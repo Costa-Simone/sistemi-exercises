@@ -16,6 +16,9 @@ void stringaMaiuscola(char *s);
 void decifraturaDiCesare(char *s, char c);
 void cifraturaSemplice(char *s, int n);
 void decifraturaSemplice(char *s, int n);
+void visualizzaRicorrenze(char *s);
+void svuotaVett(int *v);
+int verificareAnagramma(char *s, char *s2);
 
 int main()
 {
@@ -29,7 +32,6 @@ int main()
 
         switch(scelta) {
             case 1: // Converti maiuscolo e minuscolo(e viceversa)
-                getchar();
                 printf("\nFrase ->");
                 gets(s1);
                 modificaStringa(s1);
@@ -37,7 +39,6 @@ int main()
                 break;
 
             case 2: // Inverti stringa
-                getchar();
                 printf("\nFrase ->");
                 gets(s1);
                 invertiStringa(s1);
@@ -45,7 +46,6 @@ int main()
                 break;
 
             case 3: // Concatena due stringhe
-                getchar();
                 printf("\nFrase 1 ->");
                 gets(s1);
                 printf("Frase 2 ->");
@@ -59,7 +59,6 @@ int main()
                 break;
 
             case 4: // Ordina vettore di interi
-                getchar();
                 printf("\nInserisci totale valore: ");
                 scanf("%d", &len);
                 caricaVett(v, len);
@@ -72,7 +71,6 @@ int main()
                 break;
 
             case 5:
-                getchar();
                 printf("\nFrase ->");
                 gets(s1);
                 stringaMaiuscola(s1);
@@ -85,16 +83,20 @@ int main()
                 break;
 
             case 6:
-                getchar();
                 printf("\nFrase ->");
                 gets(s1);
                 stringaMaiuscola(s1);
-                printf("Inserisci la chiave con lettera dell'alfabeto:");
-                scanf("%c", &c);
 
-                if(c >= 'a' && c <= 'z') {
-                    c -= 32;
-                }
+                do {
+                    printf("Inserisci la chiave con lettera dell'alfabeto:");
+                    scanf("%c", &c);
+
+                    if(c >= 'a' && c <= 'z') {
+                        c -= 32;
+                    }
+                } while(c < 'A' || c > 'Z');
+
+
 
                 printf("\nLa stringa decifrata e': %s", s1);
                 cifraturaDiCesare(s1, c);
@@ -102,6 +104,32 @@ int main()
                 decifraturaDiCesare(s1, c);
                 printf("\nLa stringa decifrata e': %s", s1);
                 getchar();
+                break;
+
+            case  7: // Data una stringa visualizzare in output le ricorrenze
+                printf("\nFrase ->");
+                gets(s1);
+                stringaMaiuscola(s1);
+                visualizzaRicorrenze(s1);
+                break;
+
+            case  8: // Date due stringhe verificare se sono l'anagramma l'una dell'altra
+                printf("\nInserisci la prima stringa: ");
+                gets(s1);
+                printf("\nInserisci la seconda stringa: ");
+                gets(s2);
+                stringaMaiuscola(s1);
+                stringaMaiuscola(s2);
+
+                if(verificareAnagramma(s1, s2) == 1) {
+                    printf("\nLe due stringhe sono l'anagramma");
+                }
+                else {
+                    printf("\nLe due stringhe non sono l'anagramma");
+                }
+                break;
+
+            case  9: // Date due stringhe verificare se sono Hertzianamente compatibili
                 break;
         }
 
@@ -114,25 +142,69 @@ int main()
     return 0;
 }
 
+int verificareAnagramma(char *s, char *s2) {
+    int controllo, len, len2, i, j;
+    char *p, *p2;
+
+    controllo = 0;
+    len = 0;
+    len2 = 0;
+
+    for(p = s;*p != '\0'; p++) {
+        if(*p >= 'A' && *p <= 'Z') {
+            len++;
+        }
+    }
+
+    for(p2 = s2;*p2 != '\0'; p2++) {
+        if(*p2 >= 'A' && *p2 <= 'Z') {
+            len2++;
+        }
+    }
+
+    if(len == len2) {
+        
+    }
+
+    return controllo;
+}
+void visualizzaRicorrenze(char *s) {
+    int v[128];
+    char *p;
+    int *pV, i;
+
+    svuotaVett(v);
+
+    for(p = s, pV = v; *p != '\0'; p++) {
+        *(pV + *p) += 1;
+    }
+
+    printf("\nLe ricorrenze sono:\n");
+
+    for(i = 0, pV = v; i < 128; i++, pV++) {
+        if(*pV > 0) {
+            printf("\nLa lettera %c e' apparsa %d volte", i, *pV);
+        }
+    }
+}
+void svuotaVett(int *v) {
+    int *p;
+
+    for(p = v; p < v + 128; p++) {
+        *p = 0;
+    }
+}
 void cifraturaSemplice(char *s, int n) {
     for(; *s != '\0'; s++) {
-        if(*s >= 'A' && *s <= 'Z') {
+        if(*s + n > 0 && *s + n < 128) {
             *s += n;
-
-            if(*s > 'Z') {
-                *s -= 26;
-            }
         }
     }
 }
 void decifraturaSemplice(char *s, int n) {
     for(; *s != '\0'; s++) {
-        if(*s >= 'A' && *s <= 'Z') {
+        if(*s + n > 0 && *s + n < 128) {
             *s -= n;
-
-            if(*s < 'A') {
-                *s += 26;
-            }
         }
     }
 }
@@ -183,21 +255,24 @@ void stampaVett(int *v, int len) {
     }
 }
 void ordinaVett(int *v, int len) {
-    int posMin, aus, i, j;
+    int aus;
+    int *p, *p2;
 
-    for(i = 0; i <= len - 2; i++) {
-        posMin = i;
+    for(p = v; p <= v + len - 2; p++) {
+        int *posMin;
 
-        for(j = i + 1; j <= len - 1; j++) {
-            if(*(v + posMin) > *(v + j)) {
-                posMin = j;
+        posMin = p;
+
+        for(p2 = p + 1; p2 <= v + len - 1; p2++) {
+            if(*posMin > *p2) {
+                posMin = p2;
             }
         }
 
-        if(posMin != i) {
-            aus = *(v + i);
-            *(v + i) = *(v + posMin);
-            *(v + posMin) = aus;
+        if(posMin != p) {
+            aus = *p;
+            *p = *posMin;
+            *posMin = aus;
         }
     }
 }
@@ -253,7 +328,7 @@ void modificaStringa(char *s) {
         if(*s >= 'a' && *s <= 'z') {
             *s -= 32;
         }
-        else if(*s <= 'A' && *s >= 'Z') {
+        else if(*s >= 'A' && *s <= 'Z') {
             *s += 32;
         }
 
@@ -270,6 +345,9 @@ int menu() {
     printf("4. Ordina vettore di interi\n");
     printf("5. Cifratura semplice\n");
     printf("6. Cifratura di Cesare\n");
+    printf("7. Data una stringa visualizzare in output le ricorrenze\n");
+    printf("8. Date due stringhe verificare se sono l'anagramma l'una dell'altra\n");
+    printf("9. Date due stringhe verificare se sono Hertzianamente compatibili\n");
     printf("0. Esci\n");
 
     do {

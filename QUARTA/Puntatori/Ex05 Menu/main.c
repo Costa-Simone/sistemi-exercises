@@ -1,6 +1,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define MAX 51
 
@@ -19,6 +20,7 @@ void decifraturaSemplice(char *s, int n);
 void visualizzaRicorrenze(char *s);
 void svuotaVett(int *v);
 int verificareAnagramma(char *s, char *s2);
+int stringheHertziane(char *s, char *s2);
 
 int main()
 {
@@ -130,6 +132,19 @@ int main()
                 break;
 
             case  9: // Date due stringhe verificare se sono Hertzianamente compatibili
+                printf("\nInserisci la prima stringa: ");
+                gets(s1);
+                printf("\nInserisci la seconda stringa: ");
+                gets(s2);
+                stringaMaiuscola(s1);
+                stringaMaiuscola(s2);
+
+                if(stringheHertziane(s1, s2) == 1) {
+                    printf("\nLe stringhe sono Hertzianamente compatibili");
+                }
+                else {
+                    printf("\nLe stringhe non sono Hertzianamente compatibili");
+                }
                 break;
         }
 
@@ -142,31 +157,159 @@ int main()
     return 0;
 }
 
-int verificareAnagramma(char *s, char *s2) {
-    int controllo, len, len2, i, j;
-    char *p, *p2;
+int stringheHertziane(char *s, char *s2) {
+    char *p, *p2, *pos, *pos2;
+    int len, len2, controlla, i, j, esci, turno;
 
-    controllo = 0;
     len = 0;
     len2 = 0;
+    p = s;
+    p2 = s2;
+    pos = s;
+    pos2 = s2;
+    i = 0;
+    j = 0;
+    esci = 0;
+    turno = 0;
 
-    for(p = s;*p != '\0'; p++) {
+    for(; *p != '\0'; p++) {
         if(*p >= 'A' && *p <= 'Z') {
             len++;
         }
     }
 
-    for(p2 = s2;*p2 != '\0'; p2++) {
+    for(; *p2 != '\0'; p2++) {
         if(*p2 >= 'A' && *p2 <= 'Z') {
             len2++;
         }
     }
 
-    if(len == len2) {
-        
+    p = s;
+    p2 = s2;
+
+    while(i < len && j < len2 && esci == 0) {
+        if(turno == 0) {
+            if(*(p + i) != *pos2  && *(p2 + j) != *pos) {
+                esci = 1;
+            }
+            else {
+                turno++;
+                pos++;
+                pos2++;
+                i++;
+                j++;
+            }
+        }
+        else {
+            if(*(p2 + j) == *pos2 && *(p + i) == *pos) {
+                turno--;
+                pos++;
+                pos2++;
+                i++;
+                j++;
+            }
+            else {
+                esci = 1;
+            }
+        }
     }
 
-    return controllo;
+    if(esci == 1) {
+        i = 0;
+        j = 0;
+        pos = s;
+        pos2 = s2;
+        esci = 0;
+
+        while(i < len && j < len2 && esci == 0) {
+            if(turno == 0) {
+                if(*(p + i) != *pos  && *(p2 + j) != *pos2) {
+                    esci = 1;
+                }
+                else {
+                    turno++;
+                    pos++;
+                    pos2++;
+                    i++;
+                    j++;
+                }
+            }
+            else {
+                if(*(p2 + j) == *pos && *(p + i) == *pos2) {
+                    turno--;
+                    pos++;
+                    pos2++;
+                    i++;
+                    j++;
+                }
+                else {
+                    esci = 1;
+                }
+            }
+        }
+
+        if(esci == 1) {
+            controlla == 0;
+        }
+        else {
+            controlla = 1;
+        }
+    }
+    else {
+        controlla = 1;
+    }
+
+    return controlla;
+}
+int verificareAnagramma(char *s, char *s2) {
+    int v[26] = {0}, v2[26] = {0};
+    int len, len2, controlla, i;
+    char *p, *p2;
+    int *vet, *vet2;
+
+    controlla = 0;
+    vet = v;
+    vet2 = v2;
+    p = s;
+    p2 = s2;
+    len = 0;
+    len2 = 0;
+
+    for(; *p != '\0'; p++) {
+        if(*p >= 'A' && *p <= 'Z') {
+            len++;
+            *(vet + (*p - 'A')) += 1;
+        }
+    }
+
+    for(; *p2 != '\0'; p2++) {
+        if(*p2 >= 'A' && *p2 <= 'Z') {
+            len2++;
+            *(vet2 + (*p2 - 'A')) += 1;
+        }
+    }
+
+    if(len != len2) {
+        controlla = 0;
+    }
+    else {
+        i = 0;
+        vet = v;
+        vet2 = v2;
+
+        while(i < 26 && *(vet + i) == *(vet2 + i)) {
+            i++;
+        }
+
+        if(i == 26) {
+            controlla = 1;
+        }
+        else {
+            controlla = 0;
+        }
+    }
+
+    return controlla;
 }
 void visualizzaRicorrenze(char *s) {
     int v[128];

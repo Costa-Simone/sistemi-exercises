@@ -8,78 +8,78 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug"/>
+				<Option working_dir="C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Ex05_Menu">
-				<Option output="C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Ex05_Menu.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug"/>
+				<Option output="C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Ex05_Menu.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 Ex05_Menu"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 Ex05_Menu"/>
+					<CompileFile command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Ex05_Menu/fast">
-				<Option output="C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Ex05_Menu.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug"/>
+				<Option output="C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Ex05_Menu.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 Ex05_Menu/fast"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 Ex05_Menu/fast"/>
+					<CompileFile command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug"/>
+				<Option working_dir="C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug"/>
+				<Option working_dir="C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/main.c">
+		<Unit filename="C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/main.c">
 			<Option target="Ex05_Menu"/>
 		</Unit>
-		<Unit filename="C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/CMakeLists.txt">
+		<Unit filename="C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

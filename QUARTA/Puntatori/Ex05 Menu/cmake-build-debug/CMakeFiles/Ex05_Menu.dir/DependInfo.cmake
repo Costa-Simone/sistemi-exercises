@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/main.c" "CMakeFiles/Ex05_Menu.dir/main.c.obj" "gcc" "CMakeFiles/Ex05_Menu.dir/main.c.obj.d"
+  "C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Puntatori/Ex05 Menu/main.c" "CMakeFiles/Ex05_Menu.dir/main.c.obj" "gcc" "CMakeFiles/Ex05_Menu.dir/main.c.obj.d"
   )
 
 # Targets to which this target links.

@@ -1,0 +1,3 @@
+C:/Users/s.costa.2235/Desktop/Verifica/cmake-build-debug/CMakeFiles/Verifica.dir
+C:/Users/s.costa.2235/Desktop/Verifica/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/s.costa.2235/Desktop/Verifica/cmake-build-debug/CMakeFiles/rebuild_cache.dir

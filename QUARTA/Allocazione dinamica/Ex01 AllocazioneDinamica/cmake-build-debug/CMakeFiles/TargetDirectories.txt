@@ -1,0 +1,3 @@
+C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex01 AllocazioneDinamica/cmake-build-debug/CMakeFiles/Ex01_AllocazioneDinamica.dir
+C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex01 AllocazioneDinamica/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex01 AllocazioneDinamica/cmake-build-debug/CMakeFiles/rebuild_cache.dir

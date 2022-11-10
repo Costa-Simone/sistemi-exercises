@@ -1,0 +1,3 @@
+C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex03 Creazione Struct/cmake-build-debug/CMakeFiles/Ex03_Creazione_Struct.dir
+C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex03 Creazione Struct/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/s.costa.2235/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex03 Creazione Struct/cmake-build-debug/CMakeFiles/rebuild_cache.dir

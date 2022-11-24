@@ -18,6 +18,7 @@ Dipendenti* addOnTail(Dipendenti *testa);
 int contaNodi(Dipendenti *testa);
 void showList(Dipendenti *testa);
 Dipendenti* addByPos(Dipendenti *testa, int pos);
+Dipendenti* delByPos(Dipendenti *testa, int pos);
 
 int main() {
     Dipendenti *testa;
@@ -32,11 +33,10 @@ int main() {
 
     printf("\nIl numero di nodi e': %d", contaNodi(testa));
     showList(testa);
-    printf("\nInserisci la posizione in cui aggiungere il nodo: ");
+    printf("\n\nInserisci la posizione in cui aggiungere il nodo: ");
     scanf("%d", &pos);
     fflush(stdin);
 
-    pos--;
     testa = addByPos(testa, pos);
 
     showList(testa);
@@ -45,26 +45,27 @@ int main() {
 }
 
 Dipendenti* addByPos(Dipendenti *testa, int pos) {
-    Dipendenti *nuovoNodo, *pLista, *pNodoSucc;
+    Dipendenti *nuovoNodo, *pLista;
     int i;
 
-    nuovoNodo = nuovoDipendente();
-    i = 0;
-    pLista = testa;
-
-    if(pos == 0) {
-        nuovoNodo->next = testa;
-        testa = nuovoNodo;
+    if(pos <= 1) {
+        testa = addOnHead(testa);
     }
     else {
-        while(pLista->next != NULL && i < pos - 1) {
-            pLista = pLista->next;
-            i++;
+        if(pos > contaNodi(testa)) {
+            testa = addOnTail(testa);
         }
+        else {
+            nuovoNodo = nuovoDipendente();
+            pLista = testa;
 
-        pNodoSucc = pLista->next;
-        pLista->next = nuovoNodo;
-        nuovoNodo->next = pNodoSucc;
+            for(i = 1; i < (pos - 1); i++) {
+                pLista = pLista->next;
+            }
+
+            nuovoNodo->next = pLista->next;
+            pLista->next = nuovoNodo;
+        }
     }
 
     return testa;
@@ -74,13 +75,20 @@ void showList(Dipendenti *testa) {
 
     pLista = testa;
 
-    printf("\n\nMatricola\tCognome\tEta");
+    if (pLista == NULL) {
+        printf("\n\nLista vuota");
+    }
+    else {
+        printf("\n\nMatricola\tCognome\tEta");
 
-    do {
-        printf("\n%s\t\t%s\t%d", pLista->matricola, pLista->cognome, pLista->eta);
+        do {
+            printf("\n%s\t\t%s\t%d", pLista->matricola, pLista->cognome, pLista->eta);
 
-        pLista = pLista->next;
-    } while(pLista != NULL);
+            pLista = pLista->next;
+        } while(pLista != NULL);
+    }
+
+
 }
 int contaNodi(Dipendenti *testa) {
     Dipendenti *pLista;

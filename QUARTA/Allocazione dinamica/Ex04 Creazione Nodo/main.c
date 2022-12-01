@@ -21,6 +21,7 @@ Dipendenti* addByPos(Dipendenti *testa, int pos);
 Dipendenti* delByPos(Dipendenti *testa, int pos);
 Dipendenti* addOrdinato(Dipendenti *testa);
 void sortListByCogn(Dipendenti *testa);
+void sortListByCognWithNode(Dipendenti *testa);
 // ordinamento con scambio nodi
 // merge di due liste
 
@@ -58,13 +59,45 @@ int main() {
         testa = addOrdinato(testa);
     }*/
 
-    sortListByCogn(testa);
+    void sortListByCognWithNode(Dipendenti *testa);
     printf("\n\nLista ordinata:");
     showList(testa);
 
     return 0;
 }
 
+void sortListByCognWithNode(Dipendenti *testa) {
+    Dipendenti *l1, *l2, *prec1, *prec2, *next1, *next2;
+    int rifare = 1;
+    char aus[MAX];
+    int ausEta;
+
+    while (rifare == 1) {
+        rifare = 0;
+
+        for(l1 = testa->next; l1->next != NULL; l1 = l1->next) {
+            prec1 = testa;
+
+            for(l2 = l1->next; l2 != NULL; l2 = l2->next) {
+                prec2 = l1;
+
+                if(strcmp(l1->cognome, l2->cognome) > 0) {
+                    strcpy(aus, l1->matricola);
+                    strcpy(l1->matricola, l2->matricola);
+                    strcpy(l2->matricola, aus);
+                    strcpy(aus, l1->cognome);
+                    strcpy(l1->cognome, l2->cognome);
+                    strcpy(l2->cognome, aus);
+
+                    ausEta = l1->eta;
+                    l1->eta = l2->eta;
+                    l2->eta = ausEta;
+                    rifare = 1;
+                }
+            }
+        }
+    }
+}
 void sortListByCogn(Dipendenti *testa) {
     Dipendenti *l1, *l2;
     int rifare = 1;

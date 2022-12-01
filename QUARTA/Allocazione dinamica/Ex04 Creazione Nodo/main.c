@@ -41,9 +41,50 @@ int main() {
 
     showList(testa);
 
+    printf("\n\nInserisci la posizione in cui rimuovere il nodo: ");
+    scanf("%d", &pos);
+    fflush(stdin);
+
+    testa = delByPos(testa, pos);
+
+    showList(testa);
+
     return 0;
 }
 
+Dipendenti* delByPos(Dipendenti *testa, int pos) {
+    Dipendenti *pLista, *nextNodo;
+    int i;
+
+    if(testa == NULL) {
+        printf("La lista e' vuota");
+    }
+    else {
+        if(pos == 1) {
+            nextNodo = testa;
+            testa = testa->next;
+
+            free(nextNodo);
+        }
+        else {
+            pLista = testa->next;
+            nextNodo = testa;
+            i = 1;
+
+            while(i < (pos - 1) && pLista->next != NULL) {
+                nextNodo = pLista;
+                pLista = pLista->next;
+                i++;
+            }
+
+            nextNodo->next = pLista->next;
+
+            free(pLista);
+        }
+    }
+
+    return testa;
+}
 Dipendenti* addByPos(Dipendenti *testa, int pos) {
     Dipendenti *nuovoNodo, *pLista;
     int i;

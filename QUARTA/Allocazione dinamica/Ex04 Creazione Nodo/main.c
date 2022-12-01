@@ -19,13 +19,14 @@ int contaNodi(Dipendenti *testa);
 void showList(Dipendenti *testa);
 Dipendenti* addByPos(Dipendenti *testa, int pos);
 Dipendenti* delByPos(Dipendenti *testa, int pos);
+Dipendenti* addOrdinato(Dipendenti *testa);
 
 int main() {
     Dipendenti *testa;
-    int pos;
+    int pos, i;
 
     srand(time(NULL));
-
+    /*
     testa = NULL;
     testa = addOnHead(testa);
     testa = addOnHead(testa);
@@ -48,36 +49,69 @@ int main() {
     testa = delByPos(testa, pos);
 
     showList(testa);
+     */
+
+    for(i = 0; i < 5; i++) {
+        testa = addOrdinato(testa);
+    }
+
+    printf("\nIl numero di nodi e': %d", contaNodi(testa));
+    showList(testa);
 
     return 0;
 }
 
+Dipendenti* addOrdinato(Dipendenti *testa) {
+    Dipendenti *nodo, *pLista, *pPrec;
+
+    nodo = nuovoDipendente();
+
+    if(testa == NULL) {
+        testa = nodo;
+    } else {
+        if(strcmp(testa->cognome, nodo->cognome) > 0) {
+            nodo->next = testa;
+            testa = nodo;
+        } else {
+            pPrec = testa;
+            pLista = pPrec->next;
+
+            while (pLista != NULL && strcmp(nodo->cognome, pLista->cognome) > 0) {
+                pPrec = pLista;
+                pLista = pLista->next;
+            }
+
+            nodo->next = pLista;
+            pPrec->next = nodo;
+        }
+    }
+
+    return testa;
+}
 Dipendenti* delByPos(Dipendenti *testa, int pos) {
-    Dipendenti *pLista, *nextNodo;
+    Dipendenti *pLista, *precNodo;
     int i;
 
     if(testa == NULL) {
         printf("La lista e' vuota");
-    }
-    else {
+    } else {
         if(pos == 1) {
-            nextNodo = testa;
+            precNodo = testa;
             testa = testa->next;
 
-            free(nextNodo);
-        }
-        else {
+            free(precNodo);
+        } else {
             pLista = testa->next;
-            nextNodo = testa;
+            precNodo = testa;
             i = 1;
 
             while(i < (pos - 1) && pLista->next != NULL) {
-                nextNodo = pLista;
+                precNodo = pLista;
                 pLista = pLista->next;
                 i++;
             }
 
-            nextNodo->next = pLista->next;
+            precNodo->next = pLista->next;
 
             free(pLista);
         }

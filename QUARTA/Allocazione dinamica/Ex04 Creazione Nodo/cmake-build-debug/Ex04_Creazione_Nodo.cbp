@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Ex04_Creazione_Nodo"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Ex04_Creazione_Nodo">
+				<Option output="C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/cmake-build-debug/Ex04_Creazione_Nodo.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/cmake-build-debug/Makefile&quot;  VERBOSE=1 Ex04_Creazione_Nodo"/>
+					<CompileFile command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Ex04_Creazione_Nodo/fast">
+				<Option output="C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/cmake-build-debug/Ex04_Creazione_Nodo.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/cmake-build-debug/Makefile&quot;  VERBOSE=1 Ex04_Creazione_Nodo/fast"/>
+					<CompileFile command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/main.c">
+			<Option target="Ex04_Creazione_Nodo"/>
+		</Unit>
+		<Unit filename="C:/Users/valbo/Documents/GitHub/sistemi-exercises/QUARTA/Allocazione dinamica/Ex04 Creazione Nodo/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

@@ -20,52 +20,94 @@ void showList(Dipendenti *testa);
 Dipendenti* addByPos(Dipendenti *testa, int pos);
 Dipendenti* delByPos(Dipendenti *testa, int pos);
 Dipendenti* addOrdinato(Dipendenti *testa);
-void sortListByCogn(Dipendenti *testa);
+Dipendenti* sortListByCogn(Dipendenti *testa);
 void sortListByCognWithNode(Dipendenti *testa);
-// ordinamento con scambio nodi
-// merge di due liste
+Dipendenti* mergeDueListe(Dipendenti *t1, Dipendenti *t2, Dipendenti *t3);
 
 int main() {
-    Dipendenti *testa;
+    Dipendenti *testa, *testa2, *testa3;
     int pos, i;
 
     srand(time(NULL));
+    printf("Prima lista:\n");
 
     testa = NULL;
     testa = addOnHead(testa);
-    testa = addOnHead(testa);
+    testa = addOnTail(testa);
     testa = addOnTail(testa);
 
-    printf("\nIl numero di nodi e': %d", contaNodi(testa));
-    showList(testa);
-    printf("\n\nInserisci la posizione in cui aggiungere il nodo: ");
-    scanf("%d", &pos);
-    fflush(stdin);
-
-    testa = addByPos(testa, pos);
-
+    printf("\nIl numero di nodi nella prima lista e': %d", contaNodi(testa));
     showList(testa);
 
-    printf("\n\nInserisci la posizione in cui rimuovere il nodo: ");
-    scanf("%d", &pos);
-    fflush(stdin);
+    printf("\nSeconda lista:\n");
 
-    testa = delByPos(testa, pos);
+    testa2 = NULL;
+    testa2 = addOnHead(testa2);
+    testa2 = addOnTail(testa2);
+    testa2 = addOnTail(testa2);
 
-    showList(testa);
+    printf("\nIl numero di nodi nella seconda lista e': %d", contaNodi(testa2));
+    showList(testa2);
+    //printf("\n\nInserisci la posizione in cui aggiungere il nodo: ");
+    //scanf("%d", &pos);
+    //fflush(stdin);
+
+    //testa = addByPos(testa, pos);
+
+    //showList(testa);
+
+    //printf("\n\nInserisci la posizione in cui rimuovere il nodo: ");
+    //scanf("%d", &pos);
+    //fflush(stdin);
+
+    //testa = delByPos(testa, pos);
+
+    //showList(testa);
 
     /*
     for(i = 0; i < 5; i++) {
         testa = addOrdinato(testa);
     }*/
 
-    void sortListByCognWithNode(Dipendenti *testa);
-    printf("\n\nLista ordinata:");
+    // void sortListByCognWithNode(Dipendenti *testa);
+    //testa = sortListByCogn(testa);
+    //printf("\n\nLista ordinata:");
+    //showList(testa);
+
+    testa = mergeDueListe(testa, testa2, testa3);
+    printf("\nLista della merge:\n");
     showList(testa);
 
     return 0;
 }
 
+Dipendenti* mergeDueListe(Dipendenti *t1, Dipendenti *t2, Dipendenti *t3) {
+    Dipendenti *pLista1, *pLista2, *pLista3;
+
+    pLista1 = t1;
+    pLista2 = t2;
+    pLista3 = t1;
+    t3 = pLista3;
+
+    while (pLista1->next != NULL) {
+        pLista3->next = pLista1->next;
+        pLista1 = pLista1->next;
+        pLista3 = pLista3->next;
+    }
+
+    pLista3->next = pLista2;
+    pLista3 = pLista3->next;
+
+    while (pLista2->next != NULL) {
+        pLista3->next = pLista2->next;
+        pLista2 = pLista2->next;
+        pLista3 = pLista3->next;
+    }
+
+    sortListByCogn(t1);
+
+    return t1;
+}
 void sortListByCognWithNode(Dipendenti *testa) {
     Dipendenti *l1, *l2, *prec1, *prec2, *next1, *next2;
     int rifare = 1;
@@ -98,36 +140,68 @@ void sortListByCognWithNode(Dipendenti *testa) {
         }
     }
 }
-void sortListByCogn(Dipendenti *testa) {
-    Dipendenti *l1, *l2;
+Dipendenti* sortListByCogn(Dipendenti *testa) {
+    Dipendenti *l1, *l2, *prec, *prec2, *aus;
     int rifare = 1;
-    char aus[MAX];
-    int ausEta;
 
+    prec = NULL;
     l1 = NULL;
     l2 = NULL;
+    aus = NULL;
 
     while (rifare == 1) {
         rifare = 0;
 
         for(l1 = testa; l1->next != NULL; l1 = l1->next) {
+            prec2 =NULL;
+
             for(l2 = l1->next; l2 != NULL; l2 = l2->next) {
                 if(strcmp(l1->cognome, l2->cognome) > 0) {
-                    strcpy(aus, l1->matricola);
-                    strcpy(l1->matricola, l2->matricola);
-                    strcpy(l2->matricola, aus);
-                    strcpy(aus, l1->cognome);
-                    strcpy(l1->cognome, l2->cognome);
-                    strcpy(l2->cognome, aus);
+                    if(prec == NULL && prec2 == NULL) {
+                        aus = l2->next;
+                        l2->next = l1;
+                        l1->next = aus;
+                        testa->next = aus;
+                        aus = l2;
+                        l2 = l1;
+                        l1 = aus;
+                        testa = aus;
+                    } else if(prec == NULL && prec2 != NULL) {
+                        aus = l2->next;
+                        prec2->next = aus;
+                        l2->next = l1;
+                        l1 = l2;
+                        testa = l2;
+                        l2 = prec2;
+                    } else if(prec != NULL && prec2 == NULL) {
+                        aus = l2->next;
+                        l1->next = aus;
+                        prec->next = l2;
+                        l2->next = l1;
+                        aus = l2;
+                        l1 = l2;
+                        l2 = aus;
+                    } else if(prec != NULL && prec2 != NULL) {
+                        aus = l2->next;
+                        prec->next = l2;
+                        l2->next = l1;
+                        prec2->next = aus;
+                        aus = l2;
+                        l2 = prec2;
+                        l1 = aus;
+                    }
 
-                    ausEta = l1->eta;
-                    l1->eta = l2->eta;
-                    l2->eta = ausEta;
                     rifare = 1;
                 }
+
+                prec2 = l2;
             }
+
+            prec = l1;
         }
     }
+
+    return testa;
 }
 Dipendenti* addOrdinato(Dipendenti *testa) {
     Dipendenti *nodo, *pLista, *pPrec;

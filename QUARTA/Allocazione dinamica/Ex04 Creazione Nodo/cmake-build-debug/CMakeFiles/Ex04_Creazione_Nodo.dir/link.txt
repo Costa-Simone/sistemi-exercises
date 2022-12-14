@@ -1,0 +1,3 @@
+"D:\CLion 2022.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\Ex04_Creazione_Nodo.dir/objects.a
+"D:\CLion 2022.2.3\bin\mingw\bin\ar.exe" qc CMakeFiles\Ex04_Creazione_Nodo.dir/objects.a @CMakeFiles\Ex04_Creazione_Nodo.dir\objects1.rsp
+"D:\CLion 2022.2.3\bin\mingw\bin\gcc.exe" -g -Wl,--whole-archive CMakeFiles\Ex04_Creazione_Nodo.dir/objects.a -Wl,--no-whole-archive -o Ex04_Creazione_Nodo.exe -Wl,--out-implib,libEx04_Creazione_Nodo.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Ex04_Creazione_Nodo.dir\linklibs.rsp

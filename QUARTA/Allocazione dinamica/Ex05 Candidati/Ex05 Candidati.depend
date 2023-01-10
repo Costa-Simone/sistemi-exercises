@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1673367418 source:c:\users\valbo\desktop\ex05 candidati\main.c
+	"03_liste.h"
+
+1673368005 c:\users\valbo\desktop\ex05 candidati\03_liste.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+

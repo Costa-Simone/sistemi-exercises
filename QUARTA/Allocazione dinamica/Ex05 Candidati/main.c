@@ -35,13 +35,13 @@ int main(void)
         case 'D':
         case 'd': /* TODO: MIGLIORI CIASCUNA REGIONE (SI RACCOMANDA ORDINAMENTO PER REGIONE) */
             fflush(stdin);
-            BestCandidateForRegion(testa);
+            testa = BestCandidateForRegion(testa);
             break;
 
         case 'E':
         case 'e': /* TODO: 3 MIGLIORI IN ASSOLUTO (SI RACCOMANDA ORDINAMENTO PER MEDIA {DESC}) */
             fflush(stdin);
-            Best3Candidates(testa);
+            testa = Best3Candidates(testa);
             break;
 
         case 'F':

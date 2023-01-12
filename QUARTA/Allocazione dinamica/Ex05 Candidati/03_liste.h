@@ -23,7 +23,8 @@ Candidati* addOnHead(Candidati *head, char matr[], char cogn[], char reg[], int 
 Candidati* addOnTail(Candidati *head, char matr[], char cogn[], char reg[], int p1, int p2, int p3); // Add nodo in coda alla lista
 Candidati* nuovoCandidato(char matr[], char cogn[], char reg[], int p1, int p2, int p3);
 Candidati* ManualCandidate(Candidati *head);
-Candidati* SorteMedie(Candidati* head)
+Candidati* SorteMedie(Candidati* head);
+Candidati* ordinamentoRegione(Candidati* head);
 Candidati* BestCandidateForRegion(Candidati *head);
 Candidati* Best3Candidates(Candidati *head);
 Candidati* FindAndDeleteNode(Candidati *head);
@@ -90,15 +91,109 @@ Candidati* FindAndDeleteNode(Candidati *head) {
 }
 Candidati* Best3Candidates(Candidati *head) {
     Candidati *pLista;
+    int i;
 
     head = SorteMedie(head);
+    pLista = head;
+
+    for(i = 0; i < 3; i++) {
+            printf("%s\t%d\t%d\t%d\t%.2f\t%s (%s)\n",
+                    pLista->matricola, pLista->punti1, pLista->punti2, pLista->punti3, pLista->media ,pLista->cognome, pLista->regione);
+
+            pLista = pLista->next;
+    }
+
+    return head;
 }
-Candidati* SorteMediep(Candidati* head){
-    int scambio=0;
+Candidati* BestCandidateForRegion(Candidati *head) {
+    char cogn[20];
+    float med=0;
+    Candidati *l1;
+
+    head=ordinamentoRegione(head);
+
+    printf("\n\nTutti i candidati con media piu' alta per regione\n");
+
+    if(head->next!=NULL){
+        for(l1=head;l1->next->next!=NULL;l1=l1->next) {
+            if(l1->media > med){
+                med=l1->media;
+                strcpy(cogn,l1->cognome);
+            }
+
+            if(strcmp(l1->regione,l1->next->regione)!=0) {
+                printf("regione %s  cognome %s\n",l1->regione,cogn);
+
+                med=0;
+            }
+        }
+
+        if(l1->media > med) {
+            med = l1->media;
+
+            strcpy(cogn,l1->cognome);
+        }
+
+        if(strcmp(l1->regione, l1->next->regione) != 0) {
+            printf("regione %s  cognome %s\n",l1->regione,cogn);
+
+            med=0;
+        }
+
+        l1=l1->next;
+
+        if(l1->media > med) {
+            med = l1->media;
+
+            strcpy(cogn,l1->cognome);
+        }
+
+        printf("Regione:%s Cognome: %s\n",l1->regione,cogn);
+    }
+    else {
+        printf("Regione:%s Cognome: %s\n",head->regione,head->cognome);
+    }
+
+    return head;
+}
+Candidati* ordinamentoRegione(Candidati* head){
+    int scambio = 0;
+    Candidati *aus, *l1;
+    do
+    {
+        scambio = 0;
+
+        if(strcmp(head->regione, head->next->regione) > 0)//primi 2 elementi
+        {
+            scambio = 1;
+            aus = head->next;
+            head->next = aus->next;
+            aus->next = head;
+            head = aus;
+        }
+
+        for(l1=head; l1->next->next != NULL; l1 = l1->next)
+        {
+            if(strcmp(l1->next->regione,l1->next->next->regione)>0)
+            {
+                scambio = 1;
+                aus = l1->next->next;
+                l1->next->next = aus->next;
+                aus->next = l1->next;
+                l1->next = aus;
+            }
+        }
+
+    }while(scambio == 1);
+
+    return head;
+}
+Candidati* SorteMedie(Candidati* head){
+    int scambio = 0;
     Candidati *aus, *l1;
 
     do {
-        scambio=0;
+        scambio = 0;
 
         if(head->media < head->next->media) {//primi 2 elementi
             scambio = 1;
@@ -108,7 +203,7 @@ Candidati* SorteMediep(Candidati* head){
             head = aus;
         }
 
-        for(l1=head; l1->next->next != NULL; l1 = l1->next) {
+        for(l1 = head; l1->next->next != NULL; l1 = l1->next) {
             if(l1->next->media < l1->next->next->media) {
                 scambio = 1;
                 aus = l1->next->next;
@@ -117,7 +212,7 @@ Candidati* SorteMediep(Candidati* head){
                 l1->next = aus;
             }
         }
-    }while(scambio==1);
+    }while(scambio == 1);
 
     return head;
 }
@@ -237,21 +332,27 @@ Candidati* loadFromFile(Candidati *head, char* file_name_candidati, char* file_n
     char matrP[10];
     char sp1[5], sp2[5], sp3[5];
     int i=0, j=0;
+
     fpC = fopen(file_name_candidati, "r"); // Apertura file in modalità read
 
-    if (fpC == NULL && fpP == NULL)
+    if (fpC == NULL && fpP == NULL) {
         printf("Apertura files non riuscita\n");
-    else{
+    }
+    else {
         while(!feof(fpC)){ // Scorro il file, riga per riga, fino a quando non raggiungo EOF
             fscanf(fpC, "%s %s %s", matr, cogn, reg);
             //printf("LETTO: %s %s %s\n", matr, cogn, reg);
             trovato = FALSE;
             fpP = fopen(file_name_punteggi, "r"); // Apertura file in modalità read
+
             while((!feof(fpP)) && trovato==FALSE){
                 fscanf(fpP, "%s %s %s %s", matrP, sp1, sp2, sp3);
-                if (strcmp(matr, matrP) == 0)
+
+                if (strcmp(matr, matrP) == 0) {
                     trovato = TRUE;
+                }
             }
+
             fclose(fpP); // Chiusura del file
 
             if (trovato == TRUE){
@@ -263,6 +364,7 @@ Candidati* loadFromFile(Candidati *head, char* file_name_candidati, char* file_n
         }
     }
     fclose(fpC); // Chiusura del file
+
     return head;
 }
 int contaNodi(Candidati *head) {

@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1674117085 source:c:\users\s.costa.2235\documents\github\sistemi-exercises\quarta\allocazione dinamica\verifica(19-01-23)\main.c
+	"libreria.h"
+
+1674117389 c:\users\s.costa.2235\documents\github\sistemi-exercises\quarta\allocazione dinamica\verifica(19-01-23)\libreria.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

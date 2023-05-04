@@ -1,0 +1,11 @@
+\\Mac\Home\Desktop\GitHub\sistemi-exercises\QUARTA\Socket\Ex01 SocketUDP_Client\Ex01 SocketUDP_Client\bin\Debug\Ex01 SocketUDP_Client.exe.config
+\\Mac\Home\Desktop\GitHub\sistemi-exercises\QUARTA\Socket\Ex01 SocketUDP_Client\Ex01 SocketUDP_Client\bin\Debug\Ex01 SocketUDP_Client.exe
+\\Mac\Home\Desktop\GitHub\sistemi-exercises\QUARTA\Socket\Ex01 SocketUDP_Client\Ex01 SocketUDP_Client\bin\Debug\Ex01 SocketUDP_Client.pdb
+\\Mac\Home\Desktop\GitHub\sistemi-exercises\QUARTA\Socket\Ex01 SocketUDP_Client\Ex01 SocketUDP_Client\obj\Debug\Ex01 SocketUDP_Client.csproj.AssemblyReference.cache
+\\Mac\Home\Desktop\GitHub\sistemi-exercises\QUARTA\Socket\Ex01 SocketUDP_Client\Ex01 SocketUDP_Client\obj\Debug\Ex01 SocketUDP_Client.csproj.SuggestedBindingRedirects.cache
+\\Mac\Home\Desktop\GitHub\sistemi-exercises\QUARTA\Socket\Ex01 SocketUDP_Client\Ex01 SocketUDP_Client\obj\Debug\Ex01_SocketUDP_Client.Properties.Resources.resources
+\\Mac\Home\Desktop\GitHub\sistemi-exercises\QUARTA\Socket\Ex01 SocketUDP_Client\Ex01 SocketUDP_Client\obj\Debug\Ex01 SocketUDP_Client.csproj.GenerateResource.cache
+\\Mac\Home\Desktop\GitHub\sistemi-exercises\QUARTA\Socket\Ex01 SocketUDP_Client\Ex01 SocketUDP_Client\obj\Debug\Ex01 SocketUDP_Client.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\GitHub\sistemi-exercises\QUARTA\Socket\Ex01 SocketUDP_Client\Ex01 SocketUDP_Client\obj\Debug\Ex01 SocketUDP_Client.exe
+\\Mac\Home\Desktop\GitHub\sistemi-exercises\QUARTA\Socket\Ex01 SocketUDP_Client\Ex01 SocketUDP_Client\obj\Debug\Ex01 SocketUDP_Client.pdb
+\\Mac\Home\Desktop\GitHub\sistemi-exercises\QUARTA\Socket\Ex01 SocketUDP_Client\Ex01 SocketUDP_Client\obj\Debug\Ex01_SocketUDP_Client.Form1.resources

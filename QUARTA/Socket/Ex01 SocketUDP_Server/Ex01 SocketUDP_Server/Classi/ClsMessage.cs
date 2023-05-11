@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ex01_SocketUDP_Server.Classi
 {
-    internal class ClsMessage
+    public class ClsMessage
     {
         private string ip, port, messaggio;
 

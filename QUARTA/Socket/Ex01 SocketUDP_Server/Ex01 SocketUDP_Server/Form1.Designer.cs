@@ -100,6 +100,7 @@
             this.btnStart.TabIndex = 4;
             this.btnStart.Text = "START";
             this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // btnStop
             // 
@@ -109,6 +110,7 @@
             this.btnStop.TabIndex = 5;
             this.btnStop.Text = "STOP";
             this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // dgv
             // 
@@ -128,6 +130,7 @@
             this.btnPulisci.TabIndex = 7;
             this.btnPulisci.Text = "Pulisci";
             this.btnPulisci.UseVisualStyleBackColor = true;
+            this.btnPulisci.Click += new System.EventHandler(this.btnPulisci_Click);
             // 
             // Form1
             // 
@@ -142,6 +145,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudPort)).EndInit();

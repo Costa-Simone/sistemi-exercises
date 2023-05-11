@@ -29,7 +29,7 @@ namespace Ex01_SocketUDP_Client.Classi
 
         public string ToCsv(char separatore)
         {
-            return $"ip{separatore}port{separatore}messaggio";
+            return $"{ip}{separatore}{port}{separatore}{messaggio}";
         }
         public string[] ToArray()
         {

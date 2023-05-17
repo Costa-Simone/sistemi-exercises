@@ -42,6 +42,7 @@ namespace Ex02_Socket_Tris
             else
             {
                 turno = 1;
+                txtIndirizzoAvversario.Text = "192.168.1.50";
             }
 
             btnStart.Enabled = false;
@@ -75,7 +76,6 @@ namespace Ex02_Socket_Tris
                 (sender as Button).Text = "X";
                 turno = 0;
             }
-
         }
 
         private void StampaPosizioneRicevuta(ClsMessagge msg)

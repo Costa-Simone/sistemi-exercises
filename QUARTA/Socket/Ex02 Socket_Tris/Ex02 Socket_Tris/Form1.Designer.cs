@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbIndirizziIp = new System.Windows.Forms.ComboBox();
-            this.nudPorta = new System.Windows.Forms.NumericUpDown();
-            this.btnStart = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
+            this.btnStart = new System.Windows.Forms.Button();
+            this.nudPorta = new System.Windows.Forms.NumericUpDown();
+            this.cmbIndirizziIp = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtIndirizzoAvversario = new System.Windows.Forms.TextBox();
             this.nudPortaAvversario = new System.Windows.Forms.NumericUpDown();
+            this.txtIndirizzoAvversario = new System.Windows.Forms.TextBox();
             this.btn00 = new System.Windows.Forms.Button();
             this.btn01 = new System.Windows.Forms.Button();
             this.btn02 = new System.Windows.Forms.Button();
@@ -64,13 +64,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Giocatore Locale";
             // 
-            // cmbIndirizziIp
+            // btnStop
             // 
-            this.cmbIndirizziIp.FormattingEnabled = true;
-            this.cmbIndirizziIp.Location = new System.Drawing.Point(6, 19);
-            this.cmbIndirizziIp.Name = "cmbIndirizziIp";
-            this.cmbIndirizziIp.Size = new System.Drawing.Size(121, 21);
-            this.cmbIndirizziIp.TabIndex = 0;
+            this.btnStop.BackColor = System.Drawing.Color.Crimson;
+            this.btnStop.Location = new System.Drawing.Point(274, 19);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(65, 48);
+            this.btnStop.TabIndex = 2;
+            this.btnStop.Text = "STOP";
+            this.btnStop.UseVisualStyleBackColor = false;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
+            // btnStart
+            // 
+            this.btnStart.BackColor = System.Drawing.Color.Lime;
+            this.btnStart.Location = new System.Drawing.Point(203, 19);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(65, 48);
+            this.btnStart.TabIndex = 1;
+            this.btnStart.Text = "START";
+            this.btnStart.UseVisualStyleBackColor = false;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // nudPorta
             // 
@@ -94,27 +108,13 @@
             0,
             0});
             // 
-            // btnStart
+            // cmbIndirizziIp
             // 
-            this.btnStart.BackColor = System.Drawing.Color.Lime;
-            this.btnStart.Location = new System.Drawing.Point(203, 19);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(65, 48);
-            this.btnStart.TabIndex = 1;
-            this.btnStart.Text = "START";
-            this.btnStart.UseVisualStyleBackColor = false;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
-            // 
-            // btnStop
-            // 
-            this.btnStop.BackColor = System.Drawing.Color.Crimson;
-            this.btnStop.Location = new System.Drawing.Point(274, 19);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(65, 48);
-            this.btnStop.TabIndex = 2;
-            this.btnStop.Text = "STOP";
-            this.btnStop.UseVisualStyleBackColor = false;
-            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            this.cmbIndirizziIp.FormattingEnabled = true;
+            this.cmbIndirizziIp.Location = new System.Drawing.Point(6, 19);
+            this.cmbIndirizziIp.Name = "cmbIndirizziIp";
+            this.cmbIndirizziIp.Size = new System.Drawing.Size(121, 21);
+            this.cmbIndirizziIp.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -126,14 +126,6 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
-            // 
-            // txtIndirizzoAvversario
-            // 
-            this.txtIndirizzoAvversario.Location = new System.Drawing.Point(6, 19);
-            this.txtIndirizzoAvversario.Name = "txtIndirizzoAvversario";
-            this.txtIndirizzoAvversario.Size = new System.Drawing.Size(121, 20);
-            this.txtIndirizzoAvversario.TabIndex = 0;
-            this.txtIndirizzoAvversario.Text = "10.211.55.5";
             // 
             // nudPortaAvversario
             // 
@@ -156,6 +148,13 @@
             0,
             0,
             0});
+            // 
+            // txtIndirizzoAvversario
+            // 
+            this.txtIndirizzoAvversario.Location = new System.Drawing.Point(6, 19);
+            this.txtIndirizzoAvversario.Name = "txtIndirizzoAvversario";
+            this.txtIndirizzoAvversario.Size = new System.Drawing.Size(121, 20);
+            this.txtIndirizzoAvversario.TabIndex = 0;
             // 
             // btn00
             // 

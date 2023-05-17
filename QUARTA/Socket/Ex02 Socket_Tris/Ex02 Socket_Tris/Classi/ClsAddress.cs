@@ -18,7 +18,6 @@ namespace Ex02_Socket_Tris.Classi
             IPHostEntry hostInfo;
 
             //ipList.Add(IPAddress.Parse("127.0.0.1"));
-            ipList.Add(IPAddress.Loopback);
 
             hostInfo = Dns.GetHostEntry(Dns.GetHostName());
 

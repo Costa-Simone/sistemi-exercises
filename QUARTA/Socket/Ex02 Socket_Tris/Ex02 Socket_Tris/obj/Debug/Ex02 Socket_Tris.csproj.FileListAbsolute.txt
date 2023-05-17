@@ -1,0 +1,11 @@
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Socket\Ex02 Socket_Tris\Ex02 Socket_Tris\bin\Debug\Ex02 Socket_Tris.exe.config
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Socket\Ex02 Socket_Tris\Ex02 Socket_Tris\bin\Debug\Ex02 Socket_Tris.exe
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Socket\Ex02 Socket_Tris\Ex02 Socket_Tris\bin\Debug\Ex02 Socket_Tris.pdb
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Socket\Ex02 Socket_Tris\Ex02 Socket_Tris\obj\Debug\Ex02 Socket_Tris.csproj.AssemblyReference.cache
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Socket\Ex02 Socket_Tris\Ex02 Socket_Tris\obj\Debug\Ex02 Socket_Tris.csproj.SuggestedBindingRedirects.cache
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Socket\Ex02 Socket_Tris\Ex02 Socket_Tris\obj\Debug\Ex02_Socket_Tris.Form1.resources
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Socket\Ex02 Socket_Tris\Ex02 Socket_Tris\obj\Debug\Ex02_Socket_Tris.Properties.Resources.resources
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Socket\Ex02 Socket_Tris\Ex02 Socket_Tris\obj\Debug\Ex02 Socket_Tris.csproj.GenerateResource.cache
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Socket\Ex02 Socket_Tris\Ex02 Socket_Tris\obj\Debug\Ex02 Socket_Tris.csproj.CoreCompileInputs.cache
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Socket\Ex02 Socket_Tris\Ex02 Socket_Tris\obj\Debug\Ex02 Socket_Tris.exe
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Socket\Ex02 Socket_Tris\Ex02 Socket_Tris\obj\Debug\Ex02 Socket_Tris.pdb

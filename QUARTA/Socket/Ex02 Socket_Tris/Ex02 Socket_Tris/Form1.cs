@@ -33,7 +33,6 @@ namespace Ex02_Socket_Tris
         {
             clsServer = new ClsUDPServer((IPAddress)cmbIndirizziIp.SelectedItem, Convert.ToInt32(nudPorta.Value));
             clsServer.datiRicevutiEvent += StampaPosizioneRicevuta;
-            clsServer.Avvia();
 
             if (cmbIndirizziIp.SelectedItem.ToString() == "192.168.1.50")
             {
@@ -50,6 +49,7 @@ namespace Ex02_Socket_Tris
 
             btnStart.Enabled = false;
             btnStop.Enabled = true;
+            clsServer.Avvia();
         }
         private void btnStop_Click(object sender, EventArgs e)
         {

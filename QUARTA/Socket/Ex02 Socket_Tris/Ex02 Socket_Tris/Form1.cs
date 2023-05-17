@@ -38,13 +38,14 @@ namespace Ex02_Socket_Tris
             if (cmbIndirizziIp.SelectedItem.ToString() == "192.168.1.50")
             {
                 turno = 0;
-                clsServer.ip = "192.168.1.50";
+                clsServer.ip = "10.211.55.5";
+                txtIndirizzoAvversario.Text = "10.211.55.5";
             }
             else
             {
                 turno = 1;
                 txtIndirizzoAvversario.Text = "192.168.1.50";
-                clsServer.ip = "10.211.55.5";
+                clsServer.ip = "192.168.1.50";
             }
 
             btnStart.Enabled = false;

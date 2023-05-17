@@ -87,6 +87,7 @@ namespace Ex02_Socket_Tris
                 clsUDPClient.Invia(clsMessage);
 
                 (sender as Button).Text = "X";
+                (sender as Button).Enabled = false;
                 turno = 0;
             }
         }
@@ -97,11 +98,15 @@ namespace Ex02_Socket_Tris
             {
                 foreach (var item in Controls)
                 {
-                    if (item is Button && (item as Button).Name == msg.Messaggio)
+                    if (item is Button)
                     {
-                        (item as Button).Text = "O";
-                        (item as Button).Enabled = false;
-                        turno = 1;
+                        string[] messaggio = msg.ToArray();
+                        if ((item as Button).Name == messaggio[2])
+                        {
+                            (item as Button).Text = "O";
+                            (item as Button).Enabled = false;
+                            turno = 1;
+                        }
                     }
                 }
             });

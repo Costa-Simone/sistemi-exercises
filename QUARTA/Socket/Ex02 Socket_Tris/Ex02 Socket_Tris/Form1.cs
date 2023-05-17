@@ -38,11 +38,13 @@ namespace Ex02_Socket_Tris
             if (cmbIndirizziIp.SelectedItem.ToString() == "192.168.1.50")
             {
                 turno = 0;
+                clsServer.ip = "192.168.1.50";
             }
             else
             {
                 turno = 1;
                 txtIndirizzoAvversario.Text = "192.168.1.50";
+                clsServer.ip = "192.168.1.50";
             }
 
             btnStart.Enabled = false;
@@ -87,7 +89,7 @@ namespace Ex02_Socket_Tris
                     if (item is Button && (item as Button).Name == msg.Messaggio)
                     {
                         (item as Button).Text = "O";
-                        (item as Button).Enabled= false;
+                        (item as Button).Enabled = false;
                         turno = 1;
                     }
                 }

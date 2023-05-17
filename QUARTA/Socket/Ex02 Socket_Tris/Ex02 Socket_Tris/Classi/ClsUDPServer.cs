@@ -23,6 +23,7 @@ namespace Ex02_Socket_Tris.Classi
         public event datiRicevutiEventHandler datiRicevutiEvent;
 
         private volatile bool threadRun = true; // gestione avvio/stop del thread
+        public string ip;
 
         public ClsUDPServer(IPAddress ip, int port)
         {
@@ -52,7 +53,12 @@ namespace Ex02_Socket_Tris.Classi
             string msg;
             byte[] bufferRx;
 
-            endPointClient = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 5555);
+            if ()
+            {
+
+            }
+
+            endPointClient = new IPEndPoint(IPAddress.Parse(ip), 5555);
 
             while (threadRun)
             {

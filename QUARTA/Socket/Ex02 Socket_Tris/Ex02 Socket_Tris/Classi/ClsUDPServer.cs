@@ -11,7 +11,7 @@ namespace Ex02_Socket_Tris.Classi
 {
     public delegate void datiRicevutiEventHandler(ClsMessagge msg);
 
-    internal class ClsUDPServer
+    public class ClsUDPServer
     {
         private const int MAX_BYTE = 1024;
 

@@ -100,8 +100,7 @@ namespace Ex02_Socket_Tris
                 {
                     if (item is Button)
                     {
-                        string[] messaggio = msg.ToArray();
-                        if ((item as Button).Name == messaggio[2])
+                        if ((item as Button).Name == msg.Messaggio)
                         {
                             (item as Button).Text = "O";
                             (item as Button).Enabled = false;

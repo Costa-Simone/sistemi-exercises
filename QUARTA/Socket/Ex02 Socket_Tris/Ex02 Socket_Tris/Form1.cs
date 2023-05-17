@@ -44,7 +44,7 @@ namespace Ex02_Socket_Tris
             {
                 turno = 1;
                 txtIndirizzoAvversario.Text = "192.168.1.50";
-                clsServer.ip = "192.168.1.50";
+                clsServer.ip = "10.211.55.5";
             }
 
             btnStart.Enabled = false;
@@ -54,8 +54,18 @@ namespace Ex02_Socket_Tris
         {
             clsServer.Chiudi();
 
+            foreach (var item in Controls)
+            {
+                if (item is Button)
+                {
+                    (item as Button).Text = "";
+                }
+            }
+
             btnStart.Enabled = true;
+            btnStart.Text = "START";
             btnStop.Enabled = false;
+            btnStop.Text = "STOP";
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {

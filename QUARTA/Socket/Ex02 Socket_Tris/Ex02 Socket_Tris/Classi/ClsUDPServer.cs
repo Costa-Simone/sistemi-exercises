@@ -53,11 +53,6 @@ namespace Ex02_Socket_Tris.Classi
             string msg;
             byte[] bufferRx;
 
-            if ()
-            {
-
-            }
-
             endPointClient = new IPEndPoint(IPAddress.Parse(ip), 5555);
 
             while (threadRun)

@@ -15,6 +15,8 @@ namespace Ex02_Socket_Tris
     public partial class Form1 : Form
     {
         ClsUDPServer clsServer;
+        ClsMessagge clsMsg;
+        ClasUDPClient client;
 
         public int turno = 0;
 
@@ -33,23 +35,16 @@ namespace Ex02_Socket_Tris
         {
             clsServer = new ClsUDPServer((IPAddress)cmbIndirizziIp.SelectedItem, Convert.ToInt32(nudPorta.Value));
             clsServer.datiRicevutiEvent += StampaPosizioneRicevuta;
+            clsServer.Avvia();
 
-            if (cmbIndirizziIp.SelectedItem.ToString() == "192.168.1.50")
-            {
-                turno = 0;
-                clsServer.ip = "10.211.55.5";
-                txtIndirizzoAvversario.Text = "10.211.55.5";
-            }
-            else
-            {
-                turno = 1;
-                txtIndirizzoAvversario.Text = "192.168.1.50";
-                clsServer.ip = "192.168.1.50";
-            }
+            clsMsg = new ClsMessagge();
+            clsMsg.Messaggio = txtNomeLocale.Text;
+
+            client = new ClasUDPClient(IPAddress.Parse(txtIndirizzoAvversario.Text), Convert.ToInt32(nudPortaAvversario.Value));
+            client.Invia(clsMsg);
 
             btnStart.Enabled = false;
             btnStop.Enabled = true;
-            clsServer.Avvia();
         }
         private void btnStop_Click(object sender, EventArgs e)
         {
@@ -77,36 +72,40 @@ namespace Ex02_Socket_Tris
         }
         private void btn_Click(object sender, EventArgs e)
         {
-            if (turno == 1)
-            {
-                ClasUDPClient clsUDPClient = new ClasUDPClient(IPAddress.Parse(txtIndirizzoAvversario.Text), Convert.ToInt32(nudPortaAvversario.Value));
-                ClsMessagge clsMessage = new ClsMessagge();
+            Button btn = (Button)sender;
 
-                clsMessage.Messaggio = (sender as Button).Name;
+            int i, j;
 
-                clsUDPClient.Invia(clsMessage);
+            i = Convert.ToInt32(btn.Name.Substring(3, 1));
+            j = Convert.ToInt32(btn.Name.Substring(4));
 
-                (sender as Button).Text = "X";
-                (sender as Button).Enabled = false;
-                turno = 0;
-            }
+            clsMsg = new ClsMessagge();
+            clsMsg.Messaggio = i.ToString() + j.ToString();
+
+            client = new ClasUDPClient(IPAddress.Parse(txtIndirizzoAvversario.Text), Convert.ToInt32(nudPortaAvversario.Value));
+            client.Invia(clsMsg);
+
+            btn.Text = "X";
+            btn.ForeColor = Color.Blue;
         }
 
-        private void StampaPosizioneRicevuta(ClsMessagge msg)
+        private void StampaPosizioneRicevuta(ClsMessagge infoAvv)
         {
             BeginInvoke((MethodInvoker)delegate ()
             {
-                foreach (var item in Controls)
+                int i, j;
+
+                if (infoAvv.Messaggio.Length > 2)
                 {
-                    if (item is Button)
-                    {
-                        if ((item as Button).Name == msg.Messaggio)
-                        {
-                            (item as Button).Text = "O";
-                            (item as Button).Enabled = false;
-                            turno = 1;
-                        }
-                    }
+                    txtNomeAvversario.Text = infoAvv.Messaggio;
+                }
+                else
+                {
+                    i = Convert.ToInt32(infoAvv.Messaggio.Substring(0, 1));
+                    j = Convert.ToInt32(infoAvv.Messaggio.Substring(1, 1));
+
+                    Controls["btn" + i.ToString() + j.ToString()].Text = "O";
+                    Controls["btn" + i.ToString() + j.ToString()].ForeColor = Color.Red;
                 }
             });
         }

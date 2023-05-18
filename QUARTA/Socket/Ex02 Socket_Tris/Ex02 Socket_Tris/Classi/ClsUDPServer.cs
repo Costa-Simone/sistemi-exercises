@@ -53,7 +53,7 @@ namespace Ex02_Socket_Tris.Classi
             string msg;
             byte[] bufferRx;
 
-            endPointClient = new IPEndPoint(IPAddress.Parse(ip), 1024);
+            endPointClient = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 1024);
 
             while (threadRun)
             {

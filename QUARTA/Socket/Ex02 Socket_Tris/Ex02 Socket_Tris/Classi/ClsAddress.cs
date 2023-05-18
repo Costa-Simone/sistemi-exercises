@@ -11,8 +11,6 @@ namespace Ex02_Socket_Tris.Classi
     {
         public static List<IPAddress> ipList = new List<IPAddress>();
 
-        public ClsAddress() { }
-
         public static void CercaIP()
         {
             IPHostEntry hostInfo;

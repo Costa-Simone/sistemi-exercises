@@ -9,3 +9,13 @@ C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Socket\Ex02 Socket_Tris
 C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Socket\Ex02 Socket_Tris\Ex02 Socket_Tris\obj\Debug\Ex02 Socket_Tris.csproj.CoreCompileInputs.cache
 C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Socket\Ex02 Socket_Tris\Ex02 Socket_Tris\obj\Debug\Ex02 Socket_Tris.exe
 C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Socket\Ex02 Socket_Tris\Ex02 Socket_Tris\obj\Debug\Ex02 Socket_Tris.pdb
+\\Mac\Home\Desktop\GitHub\sistemi-exercises\QUARTA\Socket\Ex02 Socket_Tris\Ex02 Socket_Tris\bin\Debug\Ex02 Socket_Tris.exe.config
+\\Mac\Home\Desktop\GitHub\sistemi-exercises\QUARTA\Socket\Ex02 Socket_Tris\Ex02 Socket_Tris\bin\Debug\Ex02 Socket_Tris.exe
+\\Mac\Home\Desktop\GitHub\sistemi-exercises\QUARTA\Socket\Ex02 Socket_Tris\Ex02 Socket_Tris\bin\Debug\Ex02 Socket_Tris.pdb
+\\Mac\Home\Desktop\GitHub\sistemi-exercises\QUARTA\Socket\Ex02 Socket_Tris\Ex02 Socket_Tris\obj\Debug\Ex02 Socket_Tris.csproj.AssemblyReference.cache
+\\Mac\Home\Desktop\GitHub\sistemi-exercises\QUARTA\Socket\Ex02 Socket_Tris\Ex02 Socket_Tris\obj\Debug\Ex02_Socket_Tris.Form1.resources
+\\Mac\Home\Desktop\GitHub\sistemi-exercises\QUARTA\Socket\Ex02 Socket_Tris\Ex02 Socket_Tris\obj\Debug\Ex02_Socket_Tris.Properties.Resources.resources
+\\Mac\Home\Desktop\GitHub\sistemi-exercises\QUARTA\Socket\Ex02 Socket_Tris\Ex02 Socket_Tris\obj\Debug\Ex02 Socket_Tris.csproj.GenerateResource.cache
+\\Mac\Home\Desktop\GitHub\sistemi-exercises\QUARTA\Socket\Ex02 Socket_Tris\Ex02 Socket_Tris\obj\Debug\Ex02 Socket_Tris.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\GitHub\sistemi-exercises\QUARTA\Socket\Ex02 Socket_Tris\Ex02 Socket_Tris\obj\Debug\Ex02 Socket_Tris.exe
+\\Mac\Home\Desktop\GitHub\sistemi-exercises\QUARTA\Socket\Ex02 Socket_Tris\Ex02 Socket_Tris\obj\Debug\Ex02 Socket_Tris.pdb

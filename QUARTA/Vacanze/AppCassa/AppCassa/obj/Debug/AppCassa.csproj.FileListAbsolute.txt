@@ -1,0 +1,16 @@
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCassa\AppCassa\bin\Debug\AppCassa.exe.config
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCassa\AppCassa\bin\Debug\AppCassa.exe
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCassa\AppCassa\bin\Debug\AppCassa.pdb
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCassa\AppCassa\obj\Debug\AppCassa.csproj.AssemblyReference.cache
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCassa\AppCassa\obj\Debug\AppCassa.csproj.SuggestedBindingRedirects.cache
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCassa\AppCassa\obj\Debug\AppCassa.Form1.resources
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCassa\AppCassa\obj\Debug\AppCassa.Properties.Resources.resources
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCassa\AppCassa\obj\Debug\AppCassa.csproj.GenerateResource.cache
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCassa\AppCassa\obj\Debug\AppCassa.csproj.CoreCompileInputs.cache
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCassa\AppCassa\obj\Debug\AppCassa.exe
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCassa\AppCassa\obj\Debug\AppCassa.pdb
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCassa\AppCassa\obj\Debug\AppCassa.InfoForm.resources
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCassa\AppCassa\obj\Debug\AppCassa.PiattiForm.resources
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCassa\AppCassa\obj\Debug\AppCassa.TavoliForm.resources
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCassa\AppCassa\obj\Debug\AppCassa.OrdiniForm.resources
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCassa\AppCassa\obj\Debug\AppCassa.ScontriniForm.resources

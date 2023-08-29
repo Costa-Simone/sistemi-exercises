@@ -72,7 +72,8 @@ namespace Ex02_Socket_Tris.Classi
                 }
                 catch (SocketException ex)
                 {
-
+                    if (ex.ErrorCode != 10004)
+                        System.Windows.Forms.MessageBox.Show(ex.Message);
                 }
             }
         }

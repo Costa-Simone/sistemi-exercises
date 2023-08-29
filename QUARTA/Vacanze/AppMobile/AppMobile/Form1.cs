@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppMobile.Classi;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,39 @@ namespace AppMobile
 {
     public partial class Form1 : Form
     {
+        InfoForm formInfo = new InfoForm();
+        PiattiForm formPiatti = new PiattiForm();
+
+        static public Tools tls = new Tools();
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void infoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formInfo.Show();
+            formPiatti.Hide();
+        }
+        private void piattiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formInfo.Hide();
+            formPiatti.Show();
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            formInfo.MdiParent = this;
+            formInfo.Width = this.Width;
+            formInfo.Height = this.Height - menuStrip1.Height;
+            formInfo.StartPosition = 0;
+
+            formPiatti.MdiParent = this;
+            formPiatti.Width = this.Width;
+            formPiatti.Height = this.Height - menuStrip1.Height;
+            formPiatti.StartPosition = 0;
+
+            formInfo.Show();
         }
     }
 }

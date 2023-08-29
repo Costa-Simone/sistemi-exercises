@@ -24,7 +24,6 @@ namespace Ex02_Socket_Tris.Classi
             string messaggio = clsMsg.ToCsv(';');
             byte[] bufferTx = Encoding.ASCII.GetBytes(messaggio);
 
-            // invio pacchetto dati
             socketID.SendTo(bufferTx, bufferTx.Length, SocketFlags.None, endPointServer);
         }
     }

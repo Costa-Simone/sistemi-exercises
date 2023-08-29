@@ -19,3 +19,14 @@ C:\Users\Lenovo-i5\OneDrive - vallauri.edu\AS 2022-2023\4D - INF\Sistemi e Reti\
 \\Mac\Home\Desktop\GitHub\sistemi-exercises\QUARTA\Socket\UDP_IndovinaParolaServer\obj\Debug\UDP_IndovinaParolaServer.csproj.CoreCompileInputs.cache
 \\Mac\Home\Desktop\GitHub\sistemi-exercises\QUARTA\Socket\UDP_IndovinaParolaServer\obj\Debug\UDP_IndovinaParolaServer.exe
 \\Mac\Home\Desktop\GitHub\sistemi-exercises\QUARTA\Socket\UDP_IndovinaParolaServer\obj\Debug\UDP_IndovinaParolaServer.pdb
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Socket\UDP_IndovinaParolaServer\bin\Debug\UDP_IndovinaParolaServer.exe.config
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Socket\UDP_IndovinaParolaServer\bin\Debug\UDP_IndovinaParolaServer.exe
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Socket\UDP_IndovinaParolaServer\bin\Debug\UDP_IndovinaParolaServer.pdb
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Socket\UDP_IndovinaParolaServer\obj\Debug\UDP_IndovinaParolaServer.csproj.AssemblyReference.cache
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Socket\UDP_IndovinaParolaServer\obj\Debug\UDP_IndovinaParolaServer.csproj.SuggestedBindingRedirects.cache
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Socket\UDP_IndovinaParolaServer\obj\Debug\UDP_IndovinaParolaServer.FrmMain.resources
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Socket\UDP_IndovinaParolaServer\obj\Debug\UDP_IndovinaParolaServer.Properties.Resources.resources
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Socket\UDP_IndovinaParolaServer\obj\Debug\UDP_IndovinaParolaServer.csproj.GenerateResource.cache
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Socket\UDP_IndovinaParolaServer\obj\Debug\UDP_IndovinaParolaServer.csproj.CoreCompileInputs.cache
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Socket\UDP_IndovinaParolaServer\obj\Debug\UDP_IndovinaParolaServer.exe
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Socket\UDP_IndovinaParolaServer\obj\Debug\UDP_IndovinaParolaServer.pdb

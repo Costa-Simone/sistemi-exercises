@@ -26,6 +26,8 @@ namespace Ex02_Socket_Tris.Classi
                     ipList.Add(ip);
                 }
             }
+
+            ipList.Add(IPAddress.Loopback);
         }
     }
 }

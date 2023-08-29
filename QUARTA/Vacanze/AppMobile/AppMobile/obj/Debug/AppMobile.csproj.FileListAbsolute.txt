@@ -1,0 +1,13 @@
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppMobile\AppMobile\bin\Debug\AppMobile.exe.config
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppMobile\AppMobile\bin\Debug\AppMobile.exe
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppMobile\AppMobile\bin\Debug\AppMobile.pdb
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppMobile\AppMobile\obj\Debug\AppMobile.csproj.AssemblyReference.cache
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppMobile\AppMobile\obj\Debug\AppMobile.csproj.SuggestedBindingRedirects.cache
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppMobile\AppMobile\obj\Debug\AppMobile.Form1.resources
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppMobile\AppMobile\obj\Debug\AppMobile.InfoForm.resources
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppMobile\AppMobile\obj\Debug\AppMobile.Properties.Resources.resources
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppMobile\AppMobile\obj\Debug\AppMobile.csproj.GenerateResource.cache
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppMobile\AppMobile\obj\Debug\AppMobile.csproj.CoreCompileInputs.cache
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppMobile\AppMobile\obj\Debug\AppMobile.exe
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppMobile\AppMobile\obj\Debug\AppMobile.pdb
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppMobile\AppMobile\obj\Debug\AppMobile.PiattiForm.resources

@@ -1,5 +1,6 @@
 ﻿using AppCassa.Classi;
 using CarShopLibrary;
+using Ex02_Socket_Tris.Classi;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,6 +48,20 @@ namespace AppCassa
                         break;
                 }
             }
+        }
+
+        private void txtComunicaPiatti_Click(object sender, EventArgs e)
+        {
+            string piatti = "";
+
+            foreach (var piatto in Form1.dbTools.listaPiatti)
+            {
+                piatti += piatto.Descr + ",";
+            }
+
+            ClsMessagge msg = new ClsMessagge(Form1.ip, Form1.port, Form1.reparto, "0", piatti);
+
+            Form1.dbTools.clientMobile.Invia(msg);
         }
     }
 }

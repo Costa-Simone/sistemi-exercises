@@ -1,4 +1,5 @@
 ﻿using CarShopLibrary;
+using Ex02_Socket_Tris.Classi;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,10 @@ namespace AppCassa
         ScontriniForm formScontrini = new ScontriniForm();
 
         static public DbTools dbTools = new DbTools();
+
+        static public string ip = "";
+        static public string port = "";
+        static public string reparto = "0";
 
         public Form1()
         {

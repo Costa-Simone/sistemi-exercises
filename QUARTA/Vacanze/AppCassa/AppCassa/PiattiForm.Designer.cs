@@ -36,6 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtComunicaPiatti = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstbAntipasti
@@ -110,11 +111,22 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Dolci:";
             // 
+            // txtComunicaPiatti
+            // 
+            this.txtComunicaPiatti.Location = new System.Drawing.Point(853, 215);
+            this.txtComunicaPiatti.Name = "txtComunicaPiatti";
+            this.txtComunicaPiatti.Size = new System.Drawing.Size(149, 54);
+            this.txtComunicaPiatti.TabIndex = 9;
+            this.txtComunicaPiatti.Text = "Comunica Piatti";
+            this.txtComunicaPiatti.UseVisualStyleBackColor = true;
+            this.txtComunicaPiatti.Click += new System.EventHandler(this.txtComunicaPiatti_Click);
+            // 
             // PiattiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1035, 572);
+            this.Controls.Add(this.txtComunicaPiatti);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -142,5 +154,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button txtComunicaPiatti;
     }
 }

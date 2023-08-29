@@ -14,10 +14,6 @@ namespace AppCassa
 {
     public partial class InfoForm : Form
     {
-        ClsUDPServer clsServer;
-        ClsMessagge clsMsg;
-        ClasUDPClient clientCucina, clientMobile;
-
         public InfoForm()
         {
             InitializeComponent();
@@ -31,23 +27,23 @@ namespace AppCassa
         }
         private void btnStart_Click(object sender, EventArgs e)
         {
-            clsServer = new ClsUDPServer((IPAddress)cmbIndirizziIp.SelectedItem, Convert.ToInt32(nudPorta.Value));
-            clsServer.Avvia();
+            Form1.dbTools.clsServer = new ClsUDPServer((IPAddress)cmbIndirizziIp.SelectedItem, Convert.ToInt32(nudPorta.Value));
+            Form1.dbTools.clsServer.Avvia();
 
-            clsMsg = new ClsMessagge();
+            Form1.ip = cmbIndirizziIp.SelectedItem.ToString();
+            Form1.port = nudPorta.Value.ToString();
 
-            clientCucina = new ClasUDPClient(IPAddress.Parse(txtCucina.Text), Convert.ToInt32(nudCucina.Value));
-            clientCucina.Invia(clsMsg);
+            Form1.dbTools.clientCucina = new ClasUDPClient(IPAddress.Parse(txtCucina.Text), Convert.ToInt32(nudCucina.Value));
+            Form1.dbTools.clientMobile = new ClasUDPClient(IPAddress.Parse(txtMobile.Text), Convert.ToInt32(nudMobile.Value));
 
-            clientMobile = new ClasUDPClient(IPAddress.Parse(txtMobile.Text), Convert.ToInt32(nudMobile.Value));
-            clientMobile.Invia(clsMsg);
+            txtCucina.Enabled = false; txtMobile.Enabled = false;
 
             btnStart.Enabled = false;
             btnStop.Enabled = true;
         }
         private void btnStop_Click(object sender, EventArgs e)
         {
-            clsServer.Chiudi();
+            Form1.dbTools.clsServer.Chiudi();
 
             foreach (var item in Controls)
             {
@@ -56,6 +52,8 @@ namespace AppCassa
                     (item as Button).Text = "";
                 }
             }
+
+            txtCucina.Enabled = true; txtMobile.Enabled = true;
 
             btnStart.Enabled = true;
             btnStart.Text = "START";

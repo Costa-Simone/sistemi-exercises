@@ -1,4 +1,5 @@
 ﻿using AppCassa.Classi;
+using Ex02_Socket_Tris.Classi;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -15,6 +16,10 @@ namespace CarShopLibrary
         public List<Ordine> listaOrdini = new List<Ordine>();
         public List<Categoria> listaCategorie = new List<Categoria>();
         public List<Scontrino> listaScontrini = new List<Scontrino>();
+
+        public ClsUDPServer clsServer;
+        public ClsMessagge clsMsg;
+        public ClasUDPClient clientCucina, clientMobile;
 
         string connStr;
 

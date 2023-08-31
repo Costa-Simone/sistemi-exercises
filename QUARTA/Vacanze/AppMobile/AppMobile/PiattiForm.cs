@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Ex02_Socket_Tris.Classi;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -45,13 +47,58 @@ namespace AppMobile
                 grpbPiatti.Controls.Add(btn);
             }
         }
+        private void lstTavoli_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int tavolo = Convert.ToInt32(lstTavoli.SelectedItem);
+            int i = 0;
+            string aus = "";
+
+            while (Form1.tls.dicOrdini[tavolo][i] != null)
+            {
+                aus += Form1.tls.dicOrdini[tavolo][i] + ",";
+                i++;
+            }
+
+            lstOrdine.DataSource = aus.Split(',');
+        }
+        private void btnComunicaOrdine_Click(object sender, EventArgs e)
+        {
+            int tavolo = Convert.ToInt32(lstTavoli.SelectedItem);
+            int i = 0;
+            string ordine = "";
+
+            while (Form1.tls.dicOrdini[tavolo][i] != null)
+            {
+                ordine += Form1.tls.dicOrdini[tavolo][i] + ",";
+                i++;
+            }
+
+            ClsMessagge msg =new ClsMessagge(Form1.ip, Form1.port, Form1.reparto, tavolo.ToString(), ordine);
+
+            Form1.tls.clientCassa.Invia(msg);
+        }
 
         private void PiattoOnClick(object sender, EventArgs e)
         {
             int tavolo = Convert.ToInt32(lstTavoli.SelectedItem);
+            int i = 0;
+            string aus = "";
 
-            Form1.tls.dicOrdini[tavolo] += ((Button)sender).Text;
-            lstOrdine.DataSource = Form1.tls.dicOrdini[tavolo].ToString();
+            while (Form1.tls.dicOrdini[tavolo][i] != null)
+            {
+                i++;
+            }
+
+            Form1.tls.dicOrdini[tavolo][i] = ((Button)sender).Text;
+            i = 0;
+
+            while (Form1.tls.dicOrdini[tavolo][i] != null)
+            {
+                aus += Form1.tls.dicOrdini[tavolo][i] + ",";
+                i++;
+            }
+
+            lstOrdine.DataSource = aus.Split(',');
         }
     }
 }

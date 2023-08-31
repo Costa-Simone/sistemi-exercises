@@ -11,10 +11,10 @@ namespace AppMobile.Classi
     {
         public ClsUDPServer clsServer;
         public ClsMessagge clsMsg;
-        public ClasUDPClient clientCucina, clientMobile;
+        public ClasUDPClient clientCucina, clientCassa;
 
         public string[] listaPiatti;
         public string[] listaTavoli;
-        public Dictionary<int, string> dicOrdini = new Dictionary<int, string>();
+        public Dictionary<int, string[]> dicOrdini = new Dictionary<int, string[]>();
     }
 }

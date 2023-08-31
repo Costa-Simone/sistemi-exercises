@@ -30,6 +30,8 @@ namespace AppCassa
             Form1.dbTools.clsServer = new ClsUDPServer((IPAddress)cmbIndirizziIp.SelectedItem, Convert.ToInt32(nudPorta.Value));
             Form1.dbTools.clsServer.Avvia();
 
+            Form1.dbTools.clsServer.datiRicevutiEvent += GestisciRicezione;
+
             Form1.ip = cmbIndirizziIp.SelectedItem.ToString();
             Form1.port = nudPorta.Value.ToString();
 
@@ -59,6 +61,19 @@ namespace AppCassa
             btnStart.Text = "START";
             btnStop.Enabled = false;
             btnStop.Text = "STOP";
+        }
+
+        public void GestisciRicezione(ClsMessagge msg)
+        {
+            switch (msg.Reparto)
+            {
+                default:
+                    break;
+
+                case "1":
+                    Form1.dbTools.CreaOrdine(msg.Categoria, msg.Messaggio);
+                    break;
+            }
         }
     }
 }

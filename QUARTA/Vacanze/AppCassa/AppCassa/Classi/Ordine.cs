@@ -11,32 +11,37 @@ namespace AppCassa.Classi
     {
         public int IdOrdine { get; set; }
         public int IdTavolo { get; set; }
-        public int IdPiatto { get; set; }
+        public string IdPiatti { get; set; }
         public int IdUtente { get; set; }
 
-        public Ordine(int idOrdine, int idTavolo, int idPiatto, int idUtente)
+        public Ordine(int idOrdine, int idTavolo, string idPiatti, int idUtente)
         {
             IdOrdine = idOrdine;
             IdTavolo = idTavolo;
-            IdPiatto = idPiatto;
+            IdPiatti = idPiatti;
             IdUtente = idUtente;
         }
 
         public override string ToString()
         {
-            string aus = "";
-
             Form1.dbTools.CaricaPiatti();
+            string[] aus = IdPiatti.Split(',');
+            string piatti = "";
 
-            foreach (var piatto in Form1.dbTools.listaPiatti)
+            for (int i = 0; i < aus.Length - 1; i++)
             {
-                if (piatto.IdPiatto == IdPiatto)
+                foreach (var piatto in Form1.dbTools.listaPiatti)
                 {
-                    aus = piatto.Descr;
+                    if (piatto.IdPiatto == Convert.ToInt32(aus[i]))
+                    {
+                        piatti += piatto.Descr + ", ";
+                    }
                 }
             }
 
-            return $"{aus} ordinato dal tavolo {IdTavolo}";
+            piatti = piatti.Substring(0, piatti.Length - 2);
+
+            return $"{piatti} ordinato dal tavolo {IdTavolo}";
         }
     }
 }

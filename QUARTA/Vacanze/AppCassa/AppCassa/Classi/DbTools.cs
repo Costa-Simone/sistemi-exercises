@@ -1,4 +1,5 @@
-﻿using AppCassa.Classi;
+﻿using AppCassa;
+using AppCassa.Classi;
 using Ex02_Socket_Tris.Classi;
 using System;
 using System.Collections.Generic;
@@ -158,7 +159,7 @@ namespace CarShopLibrary
                         {
                             int idOrdine = Convert.ToInt32(reader["IdOrdine"]);
                             int idTavolo = Convert.ToInt32(reader["IdTavolo"]);
-                            int idPiatto = Convert.ToInt32(reader["IdPiatto"]);
+                            string idPiatto = reader["IdPiatti"].ToString();
                             int idUtente = Convert.ToInt32(reader["IdUtente"]);
 
                             Ordine o = new Ordine(idOrdine, idTavolo, idPiatto, idUtente);
@@ -181,6 +182,37 @@ namespace CarShopLibrary
                 using (SqlCommand command = new SqlCommand(insertQuery, connection))
                 {
                     int rowsAffected = command.ExecuteNonQuery();
+                }
+            }
+        }
+        public void CreaOrdine(string tavolo, string ordine)
+        {
+            int t = Convert.ToInt32(tavolo);
+            string idPiatti = "";
+            string[] piatti = ordine.Split(',');
+
+            for (int i = 0; i < piatti.Length; i++)
+            {
+                foreach (var piatto in Form1.dbTools.listaPiatti)
+                {
+                    if (piatto.Descr == piatti[i])
+                    {
+                        idPiatti += piatto.IdPiatto + ",";
+                    }
+                }
+            }
+
+            using (SqlConnection connection = new SqlConnection(connStr))
+            {
+                connection.Open();
+
+                string insertQuery = $"INSERT INTO Ordini (IdTavolo, IdPiatti, IdUtente) VALUES ({t}, '{idPiatti}', {1})";
+
+                using (SqlCommand command = new SqlCommand(insertQuery, connection))
+                {
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    CaricaOrdini();
                 }
             }
         }

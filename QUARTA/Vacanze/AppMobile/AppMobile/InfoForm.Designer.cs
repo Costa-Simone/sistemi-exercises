@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.nudMobile = new System.Windows.Forms.NumericUpDown();
+            this.nudCassa = new System.Windows.Forms.NumericUpDown();
             this.nudCucina = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCassa = new System.Windows.Forms.TextBox();
@@ -40,14 +40,14 @@
             this.nudPorta = new System.Windows.Forms.NumericUpDown();
             this.cmbIndirizziIp = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMobile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCassa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCucina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPorta)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.nudMobile);
+            this.groupBox1.Controls.Add(this.nudCassa);
             this.groupBox1.Controls.Add(this.nudCucina);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtCassa);
@@ -64,23 +64,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Indirizzo mobile";
             // 
-            // nudMobile
+            // nudCassa
             // 
-            this.nudMobile.Location = new System.Drawing.Point(203, 73);
-            this.nudMobile.Maximum = new decimal(new int[] {
+            this.nudCassa.Location = new System.Drawing.Point(203, 73);
+            this.nudCassa.Maximum = new decimal(new int[] {
             1024,
             0,
             0,
             0});
-            this.nudMobile.Minimum = new decimal(new int[] {
+            this.nudCassa.Minimum = new decimal(new int[] {
             1024,
             0,
             0,
             0});
-            this.nudMobile.Name = "nudMobile";
-            this.nudMobile.Size = new System.Drawing.Size(64, 20);
-            this.nudMobile.TabIndex = 8;
-            this.nudMobile.Value = new decimal(new int[] {
+            this.nudCassa.Name = "nudCassa";
+            this.nudCassa.Size = new System.Drawing.Size(64, 20);
+            this.nudCassa.TabIndex = 8;
+            this.nudCassa.Value = new decimal(new int[] {
             1024,
             0,
             0,
@@ -203,7 +203,7 @@
             this.Text = "InfoForm";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMobile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCassa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCucina)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPorta)).EndInit();
             this.ResumeLayout(false);
@@ -213,7 +213,7 @@
         #endregion
 
         public System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.NumericUpDown nudMobile;
+        private System.Windows.Forms.NumericUpDown nudCassa;
         private System.Windows.Forms.NumericUpDown nudCucina;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCassa;

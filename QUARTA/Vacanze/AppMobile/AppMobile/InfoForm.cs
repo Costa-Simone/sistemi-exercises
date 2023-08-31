@@ -29,8 +29,11 @@ namespace AppMobile
             Form1.tls.clsServer.Avvia();
             Form1.tls.clsServer.datiRicevutiEvent += GestisciRicezione;
 
+            Form1.ip = cmbIndirizziIp.SelectedItem.ToString();
+            Form1.port = nudPorta.Value.ToString();
+
             Form1.tls.clientCucina = new ClasUDPClient(IPAddress.Parse(txtCucina.Text), Convert.ToInt32(nudCucina.Value));
-            Form1.tls.clientMobile = new ClasUDPClient(IPAddress.Parse(txtCassa.Text), Convert.ToInt32(nudMobile.Value));
+            Form1.tls.clientCassa = new ClasUDPClient(IPAddress.Parse(txtCassa.Text), Convert.ToInt32(nudCassa.Value));
 
             txtCucina.Enabled = false; txtCassa.Enabled = false;
 
@@ -92,7 +95,7 @@ namespace AppMobile
                             for (int i = 0; i < tavoli.Length - 1; i++)
                             {
                                 Form1.tls.listaTavoli[i] = tavoli[i].Trim();
-                                Form1.tls.dicOrdini[Convert.ToInt32(tavoli[i])] = "";
+                                Form1.tls.dicOrdini[Convert.ToInt32(tavoli[i])] = new string[100];
                             }
                             break;
                     }

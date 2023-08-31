@@ -18,6 +18,10 @@ namespace AppMobile
 
         static public Tools tls = new Tools();
 
+        static public string ip = "";
+        static public string port = "";
+        static public string reparto = "1";
+
         public Form1()
         {
             InitializeComponent();

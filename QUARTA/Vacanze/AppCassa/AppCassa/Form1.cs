@@ -36,8 +36,15 @@ namespace AppCassa
             formPiatti.Hide();
             formTavoli.Hide();
             formInfo.Hide();
-            formOrdini.Show();
             formScontrini.Hide();
+
+            formOrdini = new OrdiniForm();
+            formOrdini.MdiParent = this;
+            formOrdini.Width = this.Width;
+            formOrdini.Height = this.Height - menuStrip1.Height;
+            formOrdini.StartPosition = 0;
+
+            formOrdini.Show();
         }
         private void elencoPiattiToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -52,8 +59,9 @@ namespace AppCassa
             formInfo.Hide();
             formPiatti.Hide();
             formOrdini.Hide();
-            formTavoli.Show();
             formScontrini.Hide();
+
+            formTavoli.Show();
         }
         private void infoCassaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -68,6 +76,7 @@ namespace AppCassa
             formPiatti.Hide();
             formTavoli.Hide();
             formOrdini.Hide();
+            formScontrini = new ScontriniForm();
             formScontrini.Show();
             formInfo.Hide();
         }

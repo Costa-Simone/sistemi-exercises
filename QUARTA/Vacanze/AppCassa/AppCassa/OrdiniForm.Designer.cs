@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lstbOrdini = new System.Windows.Forms.ListBox();
             this.btnScontrino = new System.Windows.Forms.Button();
+            this.dbToolsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dbToolsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lstbOrdini
@@ -50,6 +53,10 @@
             this.btnScontrino.UseVisualStyleBackColor = true;
             this.btnScontrino.Click += new System.EventHandler(this.btnScontrino_Click);
             // 
+            // dbToolsBindingSource
+            // 
+            this.dbToolsBindingSource.DataSource = typeof(CarShopLibrary.DbTools);
+            // 
             // OrdiniForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -61,13 +68,14 @@
             this.Name = "OrdiniForm";
             this.Text = "Ordini";
             this.Load += new System.EventHandler(this.OrdiniForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dbToolsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lstbOrdini;
         private System.Windows.Forms.Button btnScontrino;
+        public System.Windows.Forms.ListBox lstbOrdini;
+        private System.Windows.Forms.BindingSource dbToolsBindingSource;
     }
 }

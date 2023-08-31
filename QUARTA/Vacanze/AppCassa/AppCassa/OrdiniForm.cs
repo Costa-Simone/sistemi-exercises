@@ -1,5 +1,6 @@
 ﻿using AppCassa.Classi;
 using CarShopLibrary;
+using Ex02_Socket_Tris.Classi;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,6 @@ namespace AppCassa
 {
     public partial class OrdiniForm : Form
     {
-        DbTools dbTools;
-        
-
         public OrdiniForm()
         {
             InitializeComponent();
@@ -30,13 +28,17 @@ namespace AppCassa
         private void btnScontrino_Click(object sender, EventArgs e)
         {
             Ordine o = (Ordine)lstbOrdini.SelectedItem;
+            string[] piatti = o.IdPiatti.Split(',');
             int importo = 0;
 
-            foreach (var piatto in Form1.dbTools.listaPiatti)
+            for (int i = 0; i < piatti.Length; i++)
             {
-                if (piatto.IdPiatto == o.IdPiatto)
+                foreach (var piatto in Form1.dbTools.listaPiatti)
                 {
-                    importo += piatto.Importo;
+                    if (piatto.IdPiatto == Convert.ToInt32(piatti[i]))
+                    {
+                        importo += piatto.Importo;
+                    }
                 }
             }
 

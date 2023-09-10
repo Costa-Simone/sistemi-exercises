@@ -13,13 +13,15 @@ namespace AppCassa.Classi
         public int IdTavolo { get; set; }
         public string IdPiatti { get; set; }
         public int IdUtente { get; set; }
+        public int Evaso { get; set; }
 
-        public Ordine(int idOrdine, int idTavolo, string idPiatti, int idUtente)
+        public Ordine(int idOrdine, int idTavolo, string idPiatti, int idUtente, int evaso)
         {
             IdOrdine = idOrdine;
             IdTavolo = idTavolo;
             IdPiatti = idPiatti;
             IdUtente = idUtente;
+            Evaso = evaso;
         }
 
         public override string ToString()

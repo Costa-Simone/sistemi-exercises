@@ -16,5 +16,13 @@ namespace AppCucina
         {
             InitializeComponent();
         }
+
+        private void OrdiniForm_Load(object sender, EventArgs e)
+        {
+            lstTavolo1.DataSource = Form1.tls.dicOrdini[1];
+            lstTavolo2.DataSource = Form1.tls.dicOrdini[2];
+            lstTavolo3.DataSource = Form1.tls.dicOrdini[3];
+            lstTavolo4.DataSource = Form1.tls.dicOrdini[4];
+        }
     }
 }

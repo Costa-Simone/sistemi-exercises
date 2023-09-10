@@ -57,7 +57,15 @@ namespace AppCucina
 
         private void GestisciRicezione(ClsMessagge msg)
         {
-            throw new NotImplementedException();
+            switch (msg.Reparto)
+            {
+                default:
+                    break;
+
+                case "1":
+                    Form1.tls.dicOrdini[Convert.ToInt32(msg.Categoria)] = msg.Messaggio;
+                    break;
+            }
         }
     }
 }

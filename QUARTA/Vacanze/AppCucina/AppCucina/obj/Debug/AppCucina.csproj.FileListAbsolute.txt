@@ -1,0 +1,13 @@
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCucina\AppCucina\bin\Debug\AppCucina.exe.config
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCucina\AppCucina\bin\Debug\AppCucina.exe
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCucina\AppCucina\bin\Debug\AppCucina.pdb
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCucina\AppCucina\obj\Debug\AppCucina.csproj.AssemblyReference.cache
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCucina\AppCucina\obj\Debug\AppCucina.csproj.SuggestedBindingRedirects.cache
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCucina\AppCucina\obj\Debug\AppCucina.Form1.resources
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCucina\AppCucina\obj\Debug\AppCucina.InfoForm.resources
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCucina\AppCucina\obj\Debug\AppCucina.OrdiniForm.resources
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCucina\AppCucina\obj\Debug\AppCucina.Properties.Resources.resources
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCucina\AppCucina\obj\Debug\AppCucina.csproj.GenerateResource.cache
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCucina\AppCucina\obj\Debug\AppCucina.csproj.CoreCompileInputs.cache
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCucina\AppCucina\obj\Debug\AppCucina.exe
+C:\Users\valbo\Documents\GitHub\sistemi-exercises\QUARTA\Vacanze\AppCucina\AppCucina\obj\Debug\AppCucina.pdb

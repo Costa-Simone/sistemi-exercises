@@ -23,7 +23,18 @@ namespace AppCassa
         private void OrdiniForm_Load(object sender, EventArgs e)
         {
             Form1.dbTools.CaricaOrdini();
-            lstbOrdini.DataSource = Form1.dbTools.listaOrdini;
+
+            List<Ordine> aus = new List<Ordine>();
+
+            foreach (var ordine in Form1.dbTools.listaOrdini)
+            {
+                if (ordine.Evaso == 1)
+                {
+                    aus.Add(ordine);
+                }
+            }
+
+            lstbOrdini.DataSource = aus;
         }
         private void btnScontrino_Click(object sender, EventArgs e)
         {

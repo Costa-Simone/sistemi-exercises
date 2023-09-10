@@ -75,7 +75,7 @@ namespace AppMobile
 
             ClsMessagge msg =new ClsMessagge(Form1.ip, Form1.port, Form1.reparto, tavolo.ToString(), ordine);
 
-            Form1.tls.clientCassa.Invia(msg);
+            Form1.tls.clientCucina.Invia(msg);
         }
 
         private void PiattoOnClick(object sender, EventArgs e)

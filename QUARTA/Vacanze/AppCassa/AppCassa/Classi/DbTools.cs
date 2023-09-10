@@ -161,8 +161,9 @@ namespace CarShopLibrary
                             int idTavolo = Convert.ToInt32(reader["IdTavolo"]);
                             string idPiatto = reader["IdPiatti"].ToString();
                             int idUtente = Convert.ToInt32(reader["IdUtente"]);
+                            int evaso = Convert.ToInt32(reader["Evaso"]);
 
-                            Ordine o = new Ordine(idOrdine, idTavolo, idPiatto, idUtente);
+                            Ordine o = new Ordine(idOrdine, idTavolo, idPiatto, idUtente, evaso);
                             ordini.Add(o);
                         }
                     }

@@ -12,5 +12,7 @@ namespace AppCucina.Classi
         public ClsUDPServer clsServer;
         public ClsMessagge clsMsg;
         public ClasUDPClient clientCucina, clientCassa;
+
+        public Dictionary<int, string> dicOrdini = new Dictionary<int, string>();
     }
 }
